@@ -1,0 +1,47 @@
+.about {
+    position: relative;
+    z-index: 1;
+    margin-top: -15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &_text {
+        width: 80%;
+        text-indent: 1em;
+        max-width: 700px;
+    }
+
+    h1 {
+        text-align: right;
+        text-transform: uppercase;
+        position: relative;
+
+        &::after {
+            content: '';
+            border-bottom: 1px solid $cBlue;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -40px;
+            @include desktop {
+                bottom: -55px;
+            }
+            @include desktop-large {
+                bottom: -70px;
+            }
+        }
+
+        span {
+            display: block;
+        }
+    }
+
+    p {
+        @include gradiented-text($cRed, $color);
+        font-size: 18px;
+        @include desktop {
+            font-size: 32px;
+        }
+    }
+}

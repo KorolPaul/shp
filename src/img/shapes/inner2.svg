@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Keyshape -->
+<svg xmlns="http://www.w3.org/2000/svg" width="201" height="201" viewBox="0 0 201 201" fill="none">
+    <style>
+@keyframes a0_do { 0% { stroke-dashoffset: -200px; } 100% { stroke-dashoffset: -200px; } }
+@keyframes a1_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 33.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+@keyframes a2_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 53.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+@keyframes a3_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 66.6667% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+@keyframes a4_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 33.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+@keyframes a5_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 60% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+    </style>
+    <path d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="-200" stroke-dasharray="200" transform="translate(100.311,100.61) translate(-100.311,-100.61)" style="animation: 1.5s linear both a0_do;"/>
+    <path d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="-200" stroke-dasharray="200" transform="translate(100.311,100.61) rotate(-180) translate(-100.311,-100.61)"/>
+    <path d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="200" stroke-dasharray="200" transform="translate(100.311,100.61) rotate(90) translate(-100.311,-100.61)" style="animation: 1.5s linear both a1_do;"/>
+    <path d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="200" stroke-dasharray="200" transform="translate(100.311,100.61) translate(-100.311,-100.61)" style="animation: 1.5s linear both a2_do;"/>
+    <path d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) translate(-100.309,-100.61)" style="animation: 1.5s linear both a3_do;"/>
+    <path d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) rotate(90) translate(-100.309,-100.61)" style="animation: 1.5s linear both a4_do;"/>
+    <path d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) rotate(-90) translate(-100.309,-100.61)" style="animation: 1.5s linear both a5_do;"/>
+</svg>

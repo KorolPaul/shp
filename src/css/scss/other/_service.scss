@@ -1,0 +1,60 @@
+.service {
+    position: relative;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+
+    &_bg {
+        width: 100%;
+    }
+    &_fill {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        right: 0;
+        opacity: 0;
+        transition: .2s $easeInCirc opacity;
+
+        .service:hover & {
+            opacity: 1;
+        }
+    }
+    &_text {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: .3s $easeInOutCirc opacity .1s,
+                    .3s $easeInOutCirc transform .1s;
+
+        .service:hover & {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    ul {
+        padding: 0 0 0 20px;
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        line-height: 24px;
+        white-space: nowrap;
+
+        &::marker {
+            content: '— ';
+        }
+    }
+}

@@ -9,13 +9,13 @@
     white-space: nowrap;
 }
 @mixin tablet() {
-    @media all and (min-width: 768px) { @content; }
+    @media all and (min-width: 640px) { @content; }
 }
 @mixin desktop() {
-    @media all and (min-width: 1124px) { @content; }
+    @media all and (min-width: 1070px) { @content; }
 }
 @mixin desktop-large() {
-    @media all and (min-width: 1366px) { @content; }
+    @media all and (min-width: 1360px) { @content; }
 }
 @mixin media($resolution) {
     @media all and (min-width: $resolution) { @content; }
@@ -37,21 +37,25 @@
 }
 
 @mixin layout {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: $side-indent;
+    padding-right: $side-indent;
     @include tablet {
         max-width: $max-width;
         margin-left: auto;
         margin-right: auto;
-        padding-left: $indent;
-        padding-right: $indent;
+        padding-left: $side-indent__tablet;
+        padding-right: $side-indent__tablet;
+    }
+    @include desktop() {
+        padding-left: $side-indent__desktop;
+        padding-right: $side-indent__desktop;
     }
 
 }
 
 @mixin gradiented-text($color1, $color2) {
     @supports(-webkit-background-clip: text) {
-        background: linear-gradient($color1,$color2);
+        background: linear-gradient(65deg, $color1 0%, $color2 40%,$color2 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }

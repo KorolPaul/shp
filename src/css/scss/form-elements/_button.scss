@@ -15,10 +15,6 @@
     transition: .2s ease-in-out border-color,
                 .2s ease-in-out background-color,
                 .2s ease-in-out color;
-    @include tablet {
-        width: auto;
-        min-width: 230px;
-    }
 
     &:active {
         color: rgba(#fff, .3);
@@ -28,6 +24,14 @@
         border-color: #2b3036;
         color: #2b3036;
     }
+}
+
+@mixin button-reset {
+    padding: 0;
+    background: transparent;
+    height: auto;
+    line-height: 1.2;
+    min-width: inherit;
 }
 
 .button,
