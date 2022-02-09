@@ -1,0 +1,48 @@
+.careers {
+    position: relative;
+    padding: 0 0 0 16px;
+    margin: 0 0 80px;
+    @include tablet {
+        padding-left: 50px;
+    }
+    @include desktop {
+        margin-bottom: 110px;
+    }
+
+    &_title-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: 0 0;
+        transform: rotate(-90deg) translate(-100%, -20%);
+    }
+    &_title {
+        line-height: 1;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+.career {
+    &_icon {
+        display: block;
+        margin: 0 0 18px;
+        @include desktop {
+            margin: 0 50px 0 0;
+        }
+    }
+    &_title {
+        display: block;
+        font-weight: 700;
+        margin: 0 0 20px;
+        @include tablet {
+            margin: 0;
+        }
+    }
+    &_description {
+        margin: 0 0 30px;
+        @include tablet {
+            margin: 0;
+        }
+    }
+}

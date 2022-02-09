@@ -1,6 +1,6 @@
 body {
     color: $color;
-    background-color: $bg_color;
+    background: $bg_color url(#{$img}/bg.jpg) repeat;
     font: #{$font-size__small}/#{1.4} $font-family;
     padding: 0;
     @include tablet {

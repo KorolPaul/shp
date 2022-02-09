@@ -1,8 +1,12 @@
 .services {
     position: relative;
     padding: 0 0 0 16px;
+    margin: 0 0 80px;
     @include tablet {
         padding-left: 50px;
+    }
+    @include desktop {
+        margin-bottom: 110px;
     }
 
     &_title-wrapper {

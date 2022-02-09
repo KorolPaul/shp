@@ -5,6 +5,10 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    margin: 0 0 80px;
+    @include desktop {
+        margin-bottom: 184px;
+    }
 
     &_text {
         width: 80%;

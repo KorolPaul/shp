@@ -1,0 +1,27 @@
+.team {
+    position: relative;
+    padding: 0 0 0 16px;
+    margin: 0 0 80px;
+    @include tablet {
+        padding-left: 50px;
+    }
+    @include desktop {
+        margin-bottom: 110px;
+    }
+
+    &_title-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: 0 0;
+        transform: rotate(-90deg) translate(-100%, -20%);
+    }
+    &_title {
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &_slider {
+        display: flex;
+        overflow: auto;
+    }
+}

@@ -1,0 +1,81 @@
+.gallery {
+    position: relative;
+    padding: 0 0 0 16px;
+    margin: 0 0 80px;
+    @include tablet {
+        padding-left: 50px;
+    }
+    @include desktop {
+        margin-bottom: 110px;
+    }
+
+    &_title-wrapper {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: 0 0;
+        transform: rotate(-90deg) translate(-100%, -20%);
+    }
+    &_title {
+        line-height: 1;
+        text-transform: uppercase;
+    }
+    &_subtitle {
+        text-align: center;
+        font-size: 18px;
+        background: no-repeat center / contain;
+        @include desktop {
+            font-size: 32px;
+        }
+
+        &::before {
+            content: '— ';
+        }
+
+        .gallery_row:nth-child(1) & {
+            background-image: url(#{$img}/title-bg-1.svg);
+            height: 54px;
+            line-height: 54px;
+            @include desktop {
+                height: 94px;
+                line-height: 94px;
+            }
+        }
+        .gallery_row:nth-child(2) & {
+            background-image: url(#{$img}/title-bg-2.svg);
+            height: 74px;
+            line-height: 74px;
+            @include desktop {
+                height: 93px;
+                line-height: 93px;
+            }
+        }
+        .gallery_row:nth-child(3) & {
+            background-image: url(#{$img}/title-bg-3.svg);
+            height: 95px;
+            line-height: 95px;
+            @include desktop {
+                height: 100px;
+                line-height: 100px;
+            }
+        }
+        .gallery_row:nth-child(4) & {
+            background-image: url(#{$img}/title-bg-4.svg);
+            height: 54px;
+            line-height: 54px;
+            @include desktop {
+                height: 72px;
+                line-height: 72px;
+            }
+        }
+        .gallery_row:nth-child(5) & {
+            background-image: url(#{$img}/title-bg-5.svg);
+            height: 54px;
+            line-height: 54px;
+            @include desktop {
+                height: 92px;
+                line-height: 92px;
+            }
+        }
+    }
+}
