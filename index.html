@@ -26,24 +26,32 @@
                 <button class="menu_toggle"></button>
             </div>
         </div>
+
+        <nav class="menu">
+            <a href="#what-we-do" class="menu_link">What we do</a>
+            <a href="#partners" class="menu_link">Partners</a>
+            <a href="#what-we-did" class="menu_link">What we did</a>
+            <a href="#team" class="menu_link">team</a>
+            <a href="#careers" class="menu_link">careers</a>
+        </nav>
     </header>
 
     <main>
         <div class="particles"></div>
 
         <div class="content">
-
             <div class="about">
                 <h1>
                     <span><strong>Experiential</strong> Event</span>
                     <span>Production <strong>Agency</strong></span>
                 </h1>
                 <div class="about_text">
-                    <p>Our goal is to bring people and brands together in the most exciting, enjoyable way possible for them both.</p>
-                    <h3>We specialize in creating engaging experiences that get people talking, thenking and doing business together <a href="http://#">contact us</a></h3>
+                    <p>We create unforgettable experiences that connect brands with people in the most exciting, enjoyable way possible.</p>
+                    <h3>From corporate events to private parties, we'll work with you to create an experience that's uniquely tailored to your needs and vision.</h3>
                 </div>
             </div>
 
+            <a name="what-we-do"></a>
             <div class="services">
                 <div class="services_title-wrapper">
                     <h2 class="services_title">What we do</h2>
@@ -96,6 +104,7 @@
                 </div>
             </div>
 
+            <a name="partners"></a>
             <div class="partners">
                 <h3 class="partners_title">Partners that trust us</h3>
                 <div class="partners_row">
@@ -160,6 +169,7 @@
                 </div>
             </div>
 
+            <a name="what-we-did"></a>
             <div class="gallery">
                 <div class="gallery_title-wrapper">
                     <h2 class="gallery_title">
@@ -201,57 +211,92 @@
                     </span>
                 </h2>
                 <form class="connect_form">
-                    <textarea placeholder="Type your idea and contacts here"></textarea>
-                    <input type="submit" class="connect_form-button" value="Send" />
+                    <textarea class="connect_textarea" placeholder="Type your idea and contacts here"></textarea>
+                    <button class="connect_form-button">
+                        <div class="connect_form-button-bg"></div>
+                        <span class="connect_form-button-text">Send</span>
+                    </button>
                 </form>
             </div>
 
+            <a name="team"></a>
             <div class="team">
                 <div class="team_title-wrapper">
                     <h2 class="team_title">
                         team
                     </h2>
                 </div>
-                <div class="team_slider">
+                <div class="team_slider js-slider-team">
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-1.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-2.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-3.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-4.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-5.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                     <div class="team_member">
                         <img class="team_member-image" src="images/team/team-6.png" alt="">
+                        <div class="team_member-tooltip">
+                            <span class="team_member-title">Anna Pronina</span>
+                            <span class="team_member-description">Amazing product manager</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <a name="careers"></a>
             <div class="careers">
                 <div class="careers_title-wrapper">
                     <h2 class="careers_title">
                         careers
                     </h2>
                 </div>
-                <div class="careers_items">
+                <div class="careers_items js-slider-careers">
                     <div class="career">
                         <img class="career_icon" src="src/img/careers-shapes/career-1.svg" alt="">
                         <span class="career_title">Creative director</span>
                         <p class="career_description">More than 10 years experience and strong portfolio and big stone bals</p>
-                        <button class="career_button">Send CV</button>
+                        <button class="career_button">
+                            <span class="career_button-text">Send CV</span>
+                            <div class="career_button-bg"></div>
+                        </button>
                     </div>
                     <div class="career">
                         <img class="career_icon" src="src/img/careers-shapes/career-2.svg" alt="">
                         <span class="career_title">Event manager</span>
                         <p class="career_description">More than 10 years experience Use non-HomeKit devices in your HomeKit</p>
-                        <button class="career_button">Send CV</button>
+                        <button class="career_button">
+                            <span class="career_button-text">Send CV</span>
+                            <div class="career_button-bg"></div>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -267,33 +312,35 @@
                 </p>
             </div>
             <div class="footer_right">
-                <div class="footer_column">
-                    <div class="footer_subcolumn">
-                        <span class="footer_column-title">Let's talk!</span>
-                        <a href="tel:+357 940 586 55">+357 940 586 55</a>
-                        <div>
-                            <a href="#">Telegram</a>
+                <div class="footer_menu">
+                    <div class="footer_column">
+                        <div class="footer_subcolumn">
+                            <span class="footer_column-title">Let's talk!</span>
+                            <a href="tel:+357 940 586 55">+357 940 586 55</a>
+                            <div>
+                                <a href="#">Telegram</a>
+                            </div>
+                            <div>
+                                <a href="#">WhatsApp</a>
+                            </div>
                         </div>
-                        <div>
-                            <a href="#">WhatsApp</a>
+                        <div class="footer_subcolumn">
+                            <span class="footer_column-title">Write us</span>
+                            <a href="mailto:team@shp.agency">team@shp.agency</a>
                         </div>
                     </div>
-                    <div class="footer_subcolumn">
-                        <span class="footer_column-title">Write us</span>
-                        <a href="mailto:team@shp.agency">team@shp.agency</a>
-                    </div>
-                </div>
-                <div class="footer_column">
-                    <div class="footer_subcolumn">
-                        <span class="footer_column-title">Let's talk!</span>
-                        <a href="#">20 Louki Akrita 3030 Limassol, Cyprus</a>
-                    </div>
-                    <div class="footer_subcolumn">
-                        <div>
-                            <a href="#">Privacy policy</a>
+                    <div class="footer_column">
+                        <div class="footer_subcolumn">
+                            <span class="footer_column-title">Let's talk!</span>
+                            <a href="#">20 Louki Akrita <br> 3030 Limassol,<br>Cyprus</a>
                         </div>
-                        <div>
-                            <a href="#">Cookie policy</a>
+                        <div class="footer_subcolumn">
+                            <div>
+                                <a href="#">Privacy policy</a>
+                            </div>
+                            <div>
+                                <a href="#">Cookie policy</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -317,6 +364,7 @@
     <div class="fade"></div>
 
     <script src="./src/js/particles.js"></script>
+    <script src="./src/js/tiny-slider.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 </html>

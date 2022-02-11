@@ -1,12 +1,17 @@
 .team {
     position: relative;
-    padding: 0 0 0 16px;
-    margin: 0 0 80px;
+    padding: 0 0 0 48px;
+    margin: 0 -24px 0 0;
     @include tablet {
         padding-left: 50px;
     }
     @include desktop {
+        padding-left: 82px;
         margin-bottom: 110px;
+        margin-right: -62px;
+    }
+    @include desktop-large {
+        margin-right: calc(-50vw - 22px + $max-width / 2 + $side-indent__desktop / 2);
     }
 
     &_title-wrapper {
@@ -21,7 +26,51 @@
         text-transform: uppercase;
     }
     &_slider {
-        display: flex;
-        overflow: auto;
+        padding-bottom: 80px;
+        @include desktop {
+            width: 184px;
+        }
+    }
+    &_member {
+        width: 148px;
+        position: relative;
+        overflow: visible;
+        user-select: none;
+        @include desktop {
+            width: 210px;
+        }
+        @include desktop-large {
+            width: 280px;
+        }
+    }
+    &_member-tooltip {
+        background: $cBlue;
+        padding: 20px 30px;
+        border-radius: 5px 5px 30px 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: $bg_color;
+        opacity: 0;
+        transform-origin: center;
+        transform: scale(.7) translate(-50%, -50%);
+        transition: .2s $easeInOutCirc opacity,
+                    .2s $easeInOutCirc transform;
+
+        .team_member:hover & {
+            opacity: 1;
+            transform: scale(1) translate(-50%, -50%);
+        }
+    }
+    &_member-title {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+        display: block;
+        margin: 0 0 10px;
+    }
+    &_member-description {
+        font-size: 20px;
+        line-height: 24px;
     }
 }

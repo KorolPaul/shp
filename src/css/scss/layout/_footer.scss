@@ -9,6 +9,9 @@
         gap: 32px;
         padding-top: 32px;
         padding-bottom: 32px;
+        @include tablet {
+            gap: 46px;
+        }
         @include desktop {
             padding-top: 62px;
             padding-bottom: 62px;
@@ -18,10 +21,32 @@
     &_right {
         flex-grow: 1;
     }
-    &_column {
+    &_right {
         @include tablet {
             display: flex;
+            gap: 46px;
+        }
+        @include desktop {
+            gap: 72px;
+        }
+    }
+    &_menu {
+        @include desktop {
+            display: flex;
+            gap: 72px;
+        }
+    }
+    &_column {
+        @include desktop-large {
+            display: flex;
             justify-content: space-between;
+            gap: 44px;
+        }
+
+        &:last-child {
+            @include tablet {
+                flex-shrink: 0;
+            }
         }
     }
     &_subcolumn {
