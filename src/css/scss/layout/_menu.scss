@@ -1,15 +1,80 @@
 .menu {
-    position: relative;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $cYellow;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: translate(0);
+    transition: .3s $easeInOutCirc transform;
+    z-index: 2;
+    @include tablet {
+        padding: 74px;
+        width: auto;
+    }
+    @include desktop {
+        padding-right: 150px;
+    }
 
-    &_toggle {
-        background: url(#{$img}/menu.svg) no-repeat center center / contain;
-        height: 48px;
-        width: 48px;
-        margin: 0 0 0 20px;
-        @include desktop {
-            height: 56px;
-            width: 56px;
-            margin-left: 24px;
+    .menu-opened & {
+        transform: translate(-100%);
+    }
+
+    &_link {
+        display: block;
+        font-size: 28px;
+        color: $bg_color;
+        margin: 10px 0;
+        font-family: $font-family__monument;
+        text-transform: uppercase;
+        text-decoration: underline;
+        @include tablet {
+            white-space: nowrap;
+            margin: 15px 0;
         }
     }
+}
+
+.menu-toggle {
+    @include button-reset;
+    background: url(#{$img}/menu.svg) no-repeat center center / contain;
+    height: 48px;
+    width: 48px;
+    margin: 0 0 0 20px;
+    position: relative;
+    z-index: 3;
+    transform: rotate(0);
+    transition: .2s $easing transform;
+    @include desktop {
+        height: 56px;
+        width: 56px;
+        margin-left: 24px;
+    }
+
+    .menu-opened & {
+        transform: rotate(180deg);
+    }
+
+    &_close-bg {
+        background: $cYellow url(#{$img}/menu-close.svg) no-repeat center center / contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: .2s $easing opacity;
+
+        .menu-opened & {
+            opacity: 1;
+        }
+    }
+
+
 }

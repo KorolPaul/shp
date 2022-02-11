@@ -1,5 +1,5 @@
 .header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -7,6 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
     @include tablet {
         padding-left: $side-indent__tablet;
         padding-right: $side-indent__tablet;
@@ -21,7 +22,5 @@
         @include button-reset;
         display: flex;
         align-items: center;
-        position: relative;
-        z-index: 1;
     }
 }

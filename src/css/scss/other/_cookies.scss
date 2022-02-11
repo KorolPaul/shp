@@ -1,0 +1,38 @@
+.cookies {
+    background: url(#{$img}/cookies-bg.svg) no-repeat center center / cover;
+    position: fixed;
+    z-index: 2;
+    bottom: 18px;
+    right: 26px;
+    padding: 42px 28px 45px 32px;
+    width: 244px;
+    box-sizing: border-box;
+    @include desktop {
+        bottom: 60px;
+        right: 64px;
+    }
+
+    &_text {
+        color: $bg_color;
+        font-size: 18px;
+        margin: 0 0 16px;
+
+        a {
+            color: $bg_color;
+            text-decoration: underline;
+        }
+    }
+    &_button {
+        font-size: 16px;
+        background-color: transparent;
+        border: 2px solid $bg_color;
+        color: $bg_color;
+        padding: 0 10px;
+        height: 48px;
+        line-height: 43px;
+        display: flex;
+        justify-content: center;
+        min-width: 0;
+        width: 100%;
+    }
+}

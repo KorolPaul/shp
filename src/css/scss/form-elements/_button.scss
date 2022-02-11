@@ -1,38 +1,43 @@
 @mixin button {
     display: inline-block;
-    background: $cRed;
+    background: transparent;
     box-sizing: border-box;
-    border: none;
+    border: 2px solid currentColor;
+    border-radius: 14px;
     cursor: pointer;
-    color: #fff;
+    color: $color;
     font-weight: bold;
-    font-size: 18px;
-    height: 42px;
-    line-height: 42px;
+    font-size: 20px;
+    height: 56px;
+    line-height: 56px;
     padding: 0 24px;
+    min-width: 146px;
     text-align: center;
-    width: 100%;
     transition: .2s ease-in-out border-color,
-                .2s ease-in-out background-color,
                 .2s ease-in-out color;
+    @include desktop {
+        font-size: 24px;
+        height: 72px;
+        line-height: 60px;
+        min-width: 220px;
+    }
 
     &:active {
-        color: rgba(#fff, .3);
     }
     &:disabled {
-        background: #141516;
-        border-color: #2b3036;
-        color: #2b3036;
+        opacity: .6;
     }
 }
 
 @mixin button-reset {
+    border: none;
     padding: 0;
     background: transparent;
     height: auto;
     line-height: 1.2;
-    min-width: inherit;
+    min-width: 0;
     width: auto;
+    border-radius: 0;
 }
 
 .button,

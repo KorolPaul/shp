@@ -27,7 +27,6 @@
 @import  "layout/menu";
 @import  "layout/content";
 @import  "layout/popup";
-@import  "layout/fade";
 @import  "layout/about";
 @import  "layout/particles";
 @import  "layout/services";
@@ -38,8 +37,11 @@
 @import  "layout/careers";
 
 /* other */
+@import  "other/cookies";
+@import  "other/get-quote";
 @import  "other/service";
 @import  "other/social";
+@import  "other/contact-form";
 
 /* plugins */
 @import  "plugins/tiny-slider";

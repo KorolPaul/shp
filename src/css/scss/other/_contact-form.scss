@@ -1,0 +1,32 @@
+.contact-form {
+    background: url(#{$img}/contact-form-bg.svg) no-repeat left top / 41px auto;
+    padding: 110px 0 0;
+    max-width: 860px;
+    margin: auto;
+    @include desktop {
+        background-size: 72px auto;
+        padding: 0 0 0 120px;
+    }
+
+    &_text {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 54px;
+        @include desktop {
+            font-size: 48px;
+        }
+
+        span {
+            color: rgba($color, .4);
+            font-weight: 400;
+            text-decoration: underline;
+        }
+        a {
+            font-weight: 400;
+            text-decoration: underline;
+        }
+    }
+    &_button {
+        color: $cBlue;
+    }
+}

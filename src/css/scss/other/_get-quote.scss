@@ -1,0 +1,15 @@
+.get-quote {
+    @include button-reset;
+    background: url(#{$img}/get-quote.svg) no-repeat center / 100% 100%;
+    font-size: 20px;
+    color: $cRed;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+    height: 48px;
+    width: 150px;
+    @include desktop {
+        height: 56px;
+        width: 174px;
+    }
+}

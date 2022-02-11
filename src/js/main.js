@@ -1,5 +1,4 @@
 // sliders
-
 const careersSlider = tns({
     container: '.js-slider-careers',
     items: 1,
@@ -21,7 +20,6 @@ const careersSlider = tns({
         }
     }
 });
-
 
 const teamSlider = tns({
     container: '.js-slider-team',
@@ -46,7 +44,9 @@ const teamSlider = tns({
     }
 });
 
-
+// menu
+const menuToggleElement = document.querySelector('.menu-toggle');
+menuToggleElement.addEventListener('click', () => document.body.classList.toggle('menu-opened'));
 
 
 const fadeElement = document.querySelector('.fade');
@@ -66,17 +66,29 @@ if (fadeMobileElement) {
 }
 
 /* Popup */
-const popupToggleElements = document.querySelectorAll('.js-popup-toggle')
-const popupElement = document.querySelector('.popup');
+const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
-function togglePopup() {
-    popupElement.classList.toggle('opened');
-    fadeElement.classList.toggle('opened');
+function openPopup(name) {
+    const popup = document.querySelector(`.popup[data-popup="${name}"]`);
+    if (popup) {
+        popup.classList.add('opened');
+        document.body.classList.add('popup-opened');
+    }
+}
+function closePopup(name) {
+    document.querySelector('.popup.opened').classList.remove('opened');
+    document.body.classList.remove('popup-opened');
 }
 
 popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     e.preventDefault();
-    togglePopup();
+    openPopup(el.dataset.popup);
+}));
+
+const popupCloseElements = document.querySelectorAll('.popup_close');
+popupCloseElements.forEach(el => el.addEventListener('click', (e) => {
+    e.preventDefault();
+    closePopup();
 }));
 
 /* Tabs */
