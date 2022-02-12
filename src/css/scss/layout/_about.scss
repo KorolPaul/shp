@@ -25,15 +25,20 @@
             content: '';
             border-bottom: 1px solid $cBlue;
             position: absolute;
-            left: 0;
+            width: 0;
             right: 0;
             bottom: -40px;
+            transition: .5s $easeInOutCirc width;
             @include desktop {
                 bottom: -55px;
             }
             @include desktop-large {
                 bottom: -70px;
             }
+        }
+
+        &.animated::after {
+            width: 100%;
         }
 
         span {

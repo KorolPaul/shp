@@ -57,12 +57,19 @@
         margin-left: 24px;
     }
 
+    &:hover {
+        transform: scale(1.1);
+    }
+    &:active {
+        transform: scale(.9);
+    }
+
     .menu-opened & {
         transform: rotate(180deg);
     }
 
-    &_close-bg {
-        background: $cYellow url(#{$img}/menu-close.svg) no-repeat center center / contain;
+    &_filled-bg {
+        background: url(#{$img}/menu-filled.svg) no-repeat center center / contain;
         position: absolute;
         top: 0;
         left: 0;
@@ -71,10 +78,30 @@
         opacity: 0;
         transition: .2s $easing opacity;
 
-        .menu-opened & {
+        .menu-toggle:hover & {
             opacity: 1;
         }
     }
+    &_close-bg {
+        background: $cYellow url(#{$img}/menu-close.svg) no-repeat center center / contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: .2s $easing opacity .1s,
+                    .2s $easing transform;
 
+        .menu-opened & {
+            opacity: 1;
+        }
 
+        &:hover {
+            transform: scale(1.1);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
 }

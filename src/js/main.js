@@ -91,24 +91,6 @@ popupCloseElements.forEach(el => el.addEventListener('click', (e) => {
     closePopup();
 }));
 
-/* Tabs */
-const tabsButtons = document.querySelectorAll('.tabs_button');
-const tabsBlocks = document.querySelectorAll('.tabs_content');
-
-if (tabsButtons.length) {
-    function switchTab(e) {
-        e.preventDefault();
-
-        const index = e.target.dataset.tabLink;
-        tabsButtons.forEach(el => el.classList.remove('active'));
-        tabsBlocks.forEach(el => el.classList.remove('active'));
-
-        tabsButtons[index - 1].classList.add('active');
-        tabsBlocks[index - 1].classList.add('active');
-    }
-
-    tabsButtons.forEach(el => el.addEventListener('click', switchTab));
-}
 
 /* load more */
 const loadMoreButton = document.querySelector('.more-button');
@@ -120,4 +102,67 @@ if (loadMoreButton) {
             e.target.classList.remove('active');
         }, 1000);
     });
+}
+
+/* cookies */
+const hasCookies = Cookies.get('CookieNotificationCookie');
+
+const cookiesBanner = document.querySelector('.cookies');
+const cookiesAcceptButton = document.querySelector('.cookies_button');
+
+if (cookiesAcceptButton) {
+    cookiesAcceptButton.addEventListener('click', function (e) {
+        e.preventDefault();
+    
+        cookiesBanner.style.display = 'none';
+        Cookies.set('CookieNotificationCookie', 'true', { expires: 365 });
+    });
+}
+
+if (cookiesBanner && !hasCookies) {
+    cookiesBanner.style.display = 'block';
+}
+
+
+/* appaerance animation */
+const animatedElements = document.querySelectorAll('.js-animation');
+const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
+
+if (animatedElements.length) {
+    const observerCallback = function (e) {
+        const { target, intersectionRatio } = e[0];
+
+        if (intersectionRatio > 0.7) {
+            target.classList.add('animated');
+        }
+    };
+
+    animatedElements.forEach(el => {
+        const observer = new IntersectionObserver(observerCallback, {
+            rootMargin: '0px 0px -25% 0px',
+            threshold: thresholdSteps,
+            //root: document.body
+        });
+        observer.observe(el);
+    })
+}
+
+/* team-members-tooltip */
+const teamMemberElements = document.querySelectorAll('.team_member');
+teamMemberElements.forEach(el => {
+    el.addEventListener('mousemove', moveTooltip);
+    el.addEventListener('mouseleave', moveTooltip);
+});
+
+function moveTooltip(e) {
+    const { clientX, clientY } = e;
+    const { top, left } = e.target.getBoundingClientRect();
+
+    const x = Math.round(clientX - left);
+    const y = Math.round(clientY - top);
+    console.log(e);
+    const tooltipElement = e.target.parentNode.querySelector('.team_member-tooltip');
+
+    tooltipElement.style.left = `${x}px`;
+    tooltipElement.style.top = `${y}px`;
 }

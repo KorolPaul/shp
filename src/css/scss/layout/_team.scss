@@ -36,6 +36,7 @@
         position: relative;
         overflow: visible;
         user-select: none;
+        cursor: none;
         @include desktop {
             width: 210px;
         }
@@ -44,8 +45,9 @@
         }
     }
     &_member-tooltip {
+        pointer-events: none;
         background: $cBlue;
-        padding: 20px 30px;
+        padding: 10px 15px;
         border-radius: 5px 5px 30px 5px;
         position: absolute;
         top: 50%;
@@ -53,9 +55,17 @@
         color: $bg_color;
         opacity: 0;
         transform-origin: center;
+        z-index: 1;
+        box-sizing: border-box;
+        width: 220px;
         transform: scale(.7) translate(-50%, -50%);
         transition: .2s $easeInOutCirc opacity,
-                    .2s $easeInOutCirc transform;
+                    .2s $easeInOutCirc transform,
+                    .1s linear left,
+                    .1s linear top;
+        @include desktop {
+            padding: 20px 30px;
+        }
 
         .team_member:hover & {
             opacity: 1;
@@ -63,14 +73,22 @@
         }
     }
     &_member-title {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 18px;
         font-weight: 700;
         display: block;
         margin: 0 0 10px;
+        @include desktop {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
     &_member-description {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 14px;
+        line-height: 18px;
+        @include desktop {
+            font-size: 20px;
+            line-height: 24px;
+        }
     }
 }

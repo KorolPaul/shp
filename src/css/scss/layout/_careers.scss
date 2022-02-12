@@ -95,6 +95,7 @@
         min-width: 120px;
         background: url(#{$img}/cv-buttons/button-1.svg) no-repeat center / 100% 100%;
         position: relative;
+        transition: .2s $easing transform;
         @include desktop {
             height: 62px;
             line-height: 62px;
@@ -107,6 +108,9 @@
 
         &:hover {
             color: $bg_color;
+        }
+        &:active {
+            transform: scale(.9);
         }
     }
     &_button-bg {

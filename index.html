@@ -17,12 +17,16 @@
 </head>
 <body>
     <header class="header">
-        <a href="#">
-            <img src="src/img/logo.svg" alt="">
+        <a class="logo" href="#">
+            <img class="logo_image" src="src/img/logo.svg" alt="">
         </a>
         <div class="header_right">
-            <button class="get-quote js-popup-toggle" data-popup="request">Get a quote</button>
+            <button class="get-quote js-popup-toggle" data-popup="request">
+                <div class="get-quote_filled-bg"></div>
+                <span class="get-quote_text">Get a quote</span>
+            </button>
             <button class="menu-toggle">
+                <div class="menu-toggle_filled-bg"></div>
                 <div class="menu-toggle_close-bg"></div>
             </button>
         </div>
@@ -51,7 +55,7 @@
 
         <div class="content">
             <div class="about">
-                <h1>
+                <h1 class="js-animation">
                     <span><strong>Experiential</strong> Event</span>
                     <span>Production <strong>Agency</strong></span>
                 </h1>
@@ -68,7 +72,7 @@
                 </div>
                 <div class="services_holder">
                     <div class="services_item">
-                        <div class="service">
+                        <div class="service js-animation">
                             <img class="service_bg" src="src/img/shapes/shape1.svg" alt="">
                             <img class="service_fill" src="src/img/shapes/filled1.svg" alt="">
                             <div class="service_text">
@@ -84,7 +88,7 @@
                         </div>
                     </div>
                     <div class="services_item">
-                        <div class="service">
+                        <div class="service js-animation">
                             <img class="service_bg" src="src/img/shapes/shape2.svg" alt="">
                             <img class="service_fill" src="src/img/shapes/filled2.svg" alt="">
                             <div class="service_text">
@@ -99,7 +103,7 @@
                         </div>
                     </div>
                     <div class="services_item">
-                        <div class="service">
+                        <div class="service js-animation">
                             <img class="service_bg" src="src/img/shapes/shape3.svg" alt="">
                             <img class="service_fill" src="src/img/shapes/filled3.svg" alt="">
                             <div class="service_text">
@@ -117,65 +121,134 @@
             <a name="partners"></a>
             <div class="partners">
                 <h3 class="partners_title">Partners that trust us</h3>
-                <div class="partners_row">
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-1.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-2.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-3.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-4.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-5.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-6.png" alt="">
-                    </a>
+                <div class="partners_row js-animation">
+                    <div class="partners_carousel">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-2.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-3.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-5.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                    </div>
+                    <!-- dublicated items, needed fro animation -->
+                    <div class="partners_carousel partners_carousel__duplicate">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-2.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-3.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-5.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                    </div>
                 </div>
-                <div class="partners_row">
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-7.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-8.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-4.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-6.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-1.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-3.png" alt="">
-                    </a>
+                <div class="partners_row js-animation">
+                    <div class="partners_carousel">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-7.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-8.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-3.png" alt="">
+                        </a>
+                    </div>
+                    <!-- dublicated items, needed fro animation -->
+                    <div class="partners_carousel partners_carousel__duplicate">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-7.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-8.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-3.png" alt="">
+                        </a>
+                    </div>
                 </div>
-                <div class="partners_row">
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-6.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-2.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-8.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-4.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-5.png" alt="">
-                    </a>
-                    <a href="#" class="partners_item">
-                        <img class="partners_image" src="images/partners/partner-1.png" alt="">
-                    </a>
+                <div class="partners_row js-animation">
+                    <div class="partners_carousel">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-2.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-8.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-5.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                    </div>
+                    <!-- dublicated items, needed fro animation -->
+                    <div class="partners_carousel partners_carousel__duplicate">
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-6.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-2.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-8.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-4.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-5.png" alt="">
+                        </a>
+                        <a href="#" class="partners_item">
+                            <img class="partners_image" src="images/partners/partner-1.png" alt="">
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -419,13 +492,14 @@
 
     <div class="cookies">
         <p class="cookies_text">
-            <strong>SHP uses cookies</strong> to improve your experience on this website. To learn more <strong>about our cookies</strong>r, check out our <a href="#" class="js-popup-toggle" data-popup="cookie-policy">Cookie Policy</a>.
+            <strong>SHP uses cookies</strong> to improve your experience on this website. To learn more <strong>about our cookies</strong>, check out our <a href="#" class="js-popup-toggle" data-popup="cookie-policy">Cookie Policy</a>.
         </p>
         <button class="cookies_button">Accept all cookies</button>
     </div>
 
     <script src="./src/js/particles.js"></script>
     <script src="./src/js/tiny-slider.js"></script>
+    <script src="./src/js/js-cookie.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 </html>

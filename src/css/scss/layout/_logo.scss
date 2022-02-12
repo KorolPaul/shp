@@ -1,4 +1,22 @@
 .logo {
     position: relative;
     z-index: 1;
+    transition: .2s $easing filter,
+                .5s linear transform;
+
+    &:hover {
+        filter: brightness(4);
+        transform: rotate(360deg);
+        transition: .2s $easing filter,
+                    5s linear transform;
+    }
+
+    &_image {
+        display: block;
+        transition: .5s linear transform;
+
+        .logo:hover & {
+            transform: scale(1.1);
+        }
+    }
 }

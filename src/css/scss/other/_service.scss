@@ -3,6 +3,15 @@
     display: inline-block;
     position: relative;
     width: 100%;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: .8s $easeOutCirc transform,
+                .8s $easeOutCirc opacity;
+
+    &.animated {
+        transform: translateY(0);
+        opacity: 1;
+    }
 
     &_bg {
         width: 100%;
