@@ -27,14 +27,14 @@
         flex-direction: column;
         align-items: flex-end;
         @include tablet {
-            min-height: 964px;
+            min-height: 860px;
         }
         @include desktop {
             min-height: 890px;
         }
     }
     &_item {
-        margin: 0 0 40px;
+        margin: 0 0 20px;
         @include tablet {
             position: absolute;
             margin: 0;
@@ -44,17 +44,26 @@
             left: 0;
             top: 0;
             width: 248px;
+            height: 330px;
+            @include tablet {
+                left: 5%;
+            }
             @include desktop {
+                left: 0;
                 top: 130px;
                 width: 362px;
+                height: 500px;
             }
         }
         &:nth-of-type(2) {
             right: 0;
             top: 250px;
             width: 292px;
+            height: 292px;
+            align-self: flex-start;
             @include desktop {
                 width: 440px;
+                height: 440px;
                 top: 0;
             }
         }
@@ -62,9 +71,11 @@
             left: 15vw;
             bottom: 0;
             width: 243px;
+            height: 274px;
             @include desktop {
-                left: 42%;
+                left: 45%;
                 width: 370px;
+                height: 415px;
             }
         }
     }

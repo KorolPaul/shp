@@ -1,4 +1,26 @@
+const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
 // sliders
+const gallerySliders = document.querySelectorAll('.js-slider-gallery');
+gallerySliders.forEach(el => {
+    tns({
+        container: el,
+        autoWidth: true,
+        items: 2,
+        gutter: 0,
+        mouseDrag: true,
+        autoplay: false,
+        nav: false,
+        controls: false,
+        loop: false,
+        responsive: {
+            1070: {
+                disable: true
+            }
+        }
+    });
+})
+
 const careersSlider = tns({
     container: '.js-slider-careers',
     items: 1,
@@ -44,6 +66,37 @@ const teamSlider = tns({
     }
 });
 
+const teamCarouselWrapper = document.querySelector('.team');
+if (teamCarouselWrapper) {
+    teamCarouselWrapper.addEventListener('mouseenter', () => {
+        window.addEventListener(wheelEvent, handleCarouselScroll, { passive: false });
+    });
+    teamCarouselWrapper.addEventListener('mouseleave', () => {
+        window.removeEventListener(wheelEvent, handleCarouselScroll);
+    });
+}
+
+function handleCarouselScroll(e) {
+    const { slideBy, index } = teamSlider.getInfo();
+
+    if (e.deltaY > 0) {
+        if (index >= slideBy) {
+            return;
+        }
+
+        teamSlider.goTo('next');
+        e.preventDefault();
+
+    } else {
+        if (index === 0) {
+            return;
+        }
+        teamSlider.goTo('prev');
+        e.preventDefault();
+
+    }
+}
+
 // menu
 const menuToggleElement = document.querySelector('.menu-toggle');
 menuToggleElement.addEventListener('click', () => document.body.classList.toggle('menu-opened'));
@@ -68,16 +121,23 @@ if (fadeMobileElement) {
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
+function disableScroll(e) {
+    e.preventDefault();
+}
+
 function openPopup(name) {
     const popup = document.querySelector(`.popup[data-popup="${name}"]`);
     if (popup) {
         popup.classList.add('opened');
         document.body.classList.add('popup-opened');
+        window.addEventListener(wheelEvent, disableScroll, { passive: false });
     }
 }
 function closePopup(name) {
     document.querySelector('.popup.opened').classList.remove('opened');
     document.body.classList.remove('popup-opened');
+    window.removeEventListener(wheelEvent, disableScroll, { passive: false });
+
 }
 
 popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
@@ -135,6 +195,9 @@ if (animatedElements.length) {
         if (intersectionRatio > 0.7) {
             target.classList.add('animated');
         }
+        if (target.dataset.src) {
+            target.src = target.dataset.src;
+        }
     };
 
     animatedElements.forEach(el => {
@@ -160,9 +223,35 @@ function moveTooltip(e) {
 
     const x = Math.round(clientX - left);
     const y = Math.round(clientY - top);
-    console.log(e);
     const tooltipElement = e.target.parentNode.querySelector('.team_member-tooltip');
 
     tooltipElement.style.left = `${x}px`;
     tooltipElement.style.top = `${y}px`;
+}
+
+// more button
+const moreButtonElement = document.querySelector('.more-button');
+if (moreButtonElement) {
+    moreButtonElement.addEventListener('click', (e) => {
+        e.target.parentNode.parentNode.style.display = 'none';
+        e.target.parentNode.parentNode.nextElementSibling.style.display = 'block';
+    }, false)
+}
+
+// upload file
+const fileUploadLinkElement = document.querySelector('.js-file-upload-link');
+const fileUploadElement = document.querySelector('.js-file-upload');
+
+if (fileUploadLinkElement) {
+    fileUploadLinkElement.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        fileUploadElement.click();
+    })
+}
+if (fileUploadElement) {
+    fileUploadElement.addEventListener('input', (e) => {
+        fileUploadLinkElement.innerText = 'here';
+        fileUploadLinkElement.classList.add('filled');
+    })
 }

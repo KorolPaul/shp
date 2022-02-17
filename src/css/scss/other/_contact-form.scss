@@ -20,13 +20,49 @@
             color: rgba($color, .4);
             font-weight: 400;
             text-decoration: underline;
+            transition: .2s $easing color;
+
+            &:hover {
+                text-decoration: none;
+                color: rgba($color, .6);
+            }
+            &:focus {
+                color: rgba($color, 1);
+            }
         }
         a {
             font-weight: 400;
             text-decoration: underline;
+            transition: .2s $easing color;
+
+            &:hover {
+                opacity: .6;
+            }
+            &:active {
+                opacity: .8;
+            }
+
+            &.filled {
+                color: $cYellow
+            }
         }
     }
     &_button {
         color: $cBlue;
+        transition: .2s $easing background,
+                    .2s $easing color,
+                    .2s $easing transform;
+
+        &:hover {
+            color: $bg_color;
+            background-color: $cBlue;
+            transform: scale(.98);
+        }
+        &:active {
+            transform: scale(1.02);
+        }
+    }
+    &_file {
+        display: none;
     }
 }

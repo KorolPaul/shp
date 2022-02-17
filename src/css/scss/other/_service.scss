@@ -3,6 +3,7 @@
     display: inline-block;
     position: relative;
     width: 100%;
+    height: 100%;
     opacity: 0;
     transform: translateY(50px);
     transition: .8s $easeOutCirc transform,
@@ -14,20 +15,8 @@
     }
 
     &_bg {
+        height: 100%;
         width: 100%;
-    }
-    &_fill {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        right: 0;
-        opacity: 0;
-        transition: .2s $easeInCirc opacity;
-
-        .service:hover & {
-            opacity: 1;
-        }
     }
     &_text {
         box-sizing: border-box;
@@ -42,6 +31,7 @@
         height: 100%;
         width: 100%;
         opacity: 0;
+        z-index: 2;
         transform: translateY(50px);
         transition: .3s $easeInOutCirc opacity .1s,
                     .3s $easeInOutCirc transform .1s;
@@ -50,20 +40,100 @@
             transform: translateY(0);
             opacity: 1;
         }
+
+        .service__yellow & {
+            color: $bg_color;
+        }
+        .service__purple & {
+            left: -7%;
+        }
+    }
+    &_title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        width: 55%;
+        position: absolute;
+        z-index: 1;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .2s $easeInOutCirc opacity .2s;
+        @include desktop {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        .service:hover & {
+            opacity: 0;
+            transition: .2s $easeInOutCirc opacity 0s;
+        }
+
+        .service__red & {
+            color: $cRed;
+            @include desktop {
+                left: 44%;
+                width: 45%;
+            }
+        }
+        .service__yellow & {
+            color: $cYellow;
+            top: 65%;
+            left: 55%;
+            @include desktop {
+                width: 40%;
+                top: 67%;
+                left: 44%;
+            }
+        }
+        .service__purple & {
+            color: $cPurple;
+            top: 75%;
+            left: 45%;
+            width: 70%;
+            @include desktop {
+                left: 55%;
+            }
+        }
     }
 
     ul {
-        padding: 0 0 0 20px;
+        padding: 0;
+        list-style: none;
     }
     li {
         margin: 0;
-        padding: 0;
-        font-size: 20px;
-        line-height: 24px;
+        padding: 5px 0;
+        font-size: 14px;
+        line-height: 18px;
         white-space: nowrap;
-
-        &::marker {
-            content: '— ';
+        border-bottom: 1px solid currentColor;
+        @include tablet {
+            font-size: 16px;
         }
+        @include desktop {
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        &:first-child {
+            border-top: 1px solid currentColor;
+        }
+    }
+
+    &.animated:hover {
+        .service_bg-border {
+            fill: $cRed;
+        }
+        .service_bg-border__yellow {
+            fill: $cYellow;
+        }
+        .service_bg-border__purple {
+            fill: $cPurple;
+        }
+    }
+    &_bg-border {
+        fill: transparent;
+        transition: .2s ease-in-out fill;
     }
 }

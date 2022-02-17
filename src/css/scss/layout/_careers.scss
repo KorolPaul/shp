@@ -44,15 +44,39 @@
         margin: 0 0 72px;
     }
 
-    &_icon {
-        display: block;
+    &_icon-wrapper {
+        position: relative;
         margin: 0 0 18px;
+        cursor: pointer;
+        transition: .2s $easing transform;
         @include desktop {
             margin: -35px 50px 0 0;
+        }
+
+        &:hover {
+            transform: scale(.95);
+        }
+        &:active {
+            transform: scale(1.05);
+        }
+    }
+    &_icon {
+        display: block;
+        @include desktop {
             width: 154px;
         }
-        @include desktop-large {
-            margin-top: -50px;
+    }
+    &_icon-filled {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .2s $easing opacity;
+
+        .career_icon-wrapper:hover & {
+            opacity: 1;
         }
     }
     &_title {

@@ -43,6 +43,9 @@
 
         span {
             display: block;
+            @include desktop {
+                white-space: nowrap
+            }
         }
     }
 

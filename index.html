@@ -51,7 +51,7 @@
     </header>
 
     <main>
-        <div class="particles"></div>
+        <div class="particles js-particles" data-image="images/canvas.webp"></div>
 
         <div class="content">
             <div class="about">
@@ -72,9 +72,19 @@
                 </div>
                 <div class="services_holder">
                     <div class="services_item">
-                        <div class="service js-animation">
-                            <img class="service_bg" src="src/img/shapes/shape1.svg" alt="">
-                            <img class="service_fill" src="src/img/shapes/filled1.svg" alt="">
+                        <div class="service service__red js-animation">
+                            <svg class="service_bg" width="267" height="348" viewBox="0 0 267 348" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <style>
+                                @keyframes figure { 0% { stroke-dashoffset: -656px; animation-timing-function: cubic-bezier(.5,0,.5,1); } 100% { stroke-dashoffset: -1311px; } }
+
+                                .animated .figure {
+                                    animation: 1.9s linear forwards figure;
+                                }
+                                </style>
+                                <path class="figure" d="M132.579 169.652L132.579 115.866C125.687 135.715 114.335 151.78 95.8209 162.169C85.1279 168.239 73.0134 171.359 60.7182 171.206L60.7182 99.0076L205.217 99.0076C205.335 120.241 197.227 137.59 182.243 151.999C168.358 165.446 145.62 173.504 132.579 169.652Z" stroke="#FF6547" stroke-width="2.51645" stroke-dasharray="656" stroke-dashoffset="-656"/>
+                                <path class="service_bg-border" d="M139.467 3.10716L260.415 72.9365C264.039 75.0285 266.271 78.8947 266.271 83.0787V265.702C266.271 269.886 264.039 273.752 260.415 275.844L139.467 345.674C135.844 347.766 131.379 347.766 127.756 345.674L6.80793 275.844C3.18449 273.752 0.952354 269.886 0.952354 265.702V83.0787C0.952354 78.8947 3.18449 75.0285 6.80793 72.9365L127.756 3.10716C131.379 1.01516 135.844 1.01516 139.467 3.10716Z" stroke="#FF6547" stroke-width="1.25822"/>
+                            </svg>
+                            <span class="service_title">Event design and production</span>
                             <div class="service_text">
                                 <ul>
                                     <li>Location Sourcing</li>
@@ -88,9 +98,48 @@
                         </div>
                     </div>
                     <div class="services_item">
-                        <div class="service js-animation">
-                            <img class="service_bg" src="src/img/shapes/shape2.svg" alt="">
-                            <img class="service_fill" src="src/img/shapes/filled2.svg" alt="">
+                        <div class="service service__yellow js-animation">
+                            <svg class="service_bg" width="307" height="308" viewBox="0 0 307 308" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <style>
+                                @keyframes a0_do { 0% { stroke-dashoffset: -200px; } 100% { stroke-dashoffset: -200px; } }
+                                @keyframes a1_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 33.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+                                @keyframes a2_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 53.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+                                @keyframes a3_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 66.6667% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+                                @keyframes a4_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 33.3333% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+                                @keyframes a5_do { 0% { stroke-dashoffset: 200px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 60% { stroke-dashoffset: 0px; animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { stroke-dashoffset: 400px; } }
+                                
+                                .animated .figure1 {
+                                    animation: 1.5s linear both a0_do;
+                                }
+                                .animated .figure2 {
+                                    animation: 1.5s linear both a1_do;
+                                }
+                                .animated .figure3 {
+                                    animation: 1.5s linear both a2_do;
+                                }
+                                .animated .figure4 {
+                                    animation: 1.5s linear both a3_do;
+                                }
+                                .animated .figure5 {
+                                    animation: 1.5s linear both a4_do;
+                                }
+                                .animated .figure6 {
+                                    animation: 1.5s linear both a5_do;
+                                }
+                                </style>
+                                <g style="transform: scale(0.72) translate(34.5%, 18%)">
+                                    <path class="figure1" d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="-200" stroke-dasharray="200" transform="translate(100.311,100.61) translate(-100.311,-100.61)" />
+                                    <path d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="-200" stroke-dasharray="200" transform="translate(100.311,100.61) rotate(-180) translate(-100.311,-100.61)"/>
+                                    <path class="figure2" d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="200" stroke-dasharray="200" transform="translate(100.311,100.61) rotate(90) translate(-100.311,-100.61)" />
+                                    <path class="figure3" d="M100.311,0.610352L100.311,200.61" stroke="#FFD369" stroke-width="6" stroke-dashoffset="200" stroke-dasharray="200" transform="translate(100.311,100.61) translate(-100.311,-100.61)" />
+                                    <path class="figure4" d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) translate(-100.309,-100.61)" />
+                                    <path class="figure5" d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) rotate(90) translate(-100.309,-100.61)" />
+                                    <path class="figure6" d="M171.02,171.321L29.5982,29.8997" stroke="#FFD369" stroke-width="6" stroke-dasharray="200" stroke-dashoffset="200" transform="translate(100.309,100.61) rotate(-90) translate(-100.309,-100.61)" />
+                                </g>
+                                <path class="service_bg-border service_bg-border__yellow" d="M139.758 3.14813C143.143 1.06524 147.352 0.840504 150.939 2.55123L170.049 11.6665C172.425 12.7994 175.088 13.1829 177.687 12.7662L198.593 9.41315C202.516 8.78387 206.491 10.1871 209.15 13.1402L223.318 28.8749C225.079 30.8306 227.393 32.2043 229.953 32.8136L250.551 37.7162C254.417 38.6363 257.552 41.454 258.879 45.1998L265.947 65.1586C266.825 67.6392 268.438 69.7939 270.57 71.3365L287.723 83.7484C290.943 86.0779 292.761 89.8809 292.553 93.8492L291.445 114.994C291.308 117.621 291.973 120.229 293.352 122.47L304.45 140.502C306.533 143.886 306.758 148.095 305.047 151.682L295.932 170.793C294.799 173.168 294.415 175.832 294.832 178.43L298.185 199.336C298.814 203.26 297.411 207.235 294.458 209.894L278.723 224.062C276.768 225.823 275.394 228.137 274.785 230.697L269.882 251.295C268.962 255.16 266.144 258.296 262.398 259.622L242.44 266.69C239.959 267.569 237.804 269.181 236.262 271.313L223.85 288.467C221.52 291.686 217.717 293.505 213.749 293.297L192.605 292.189C189.977 292.051 187.369 292.716 185.128 294.095L167.096 305.194C163.712 307.276 159.503 307.501 155.916 305.79L136.805 296.675C134.43 295.542 131.767 295.159 129.168 295.575L108.262 298.929C104.338 299.558 100.363 298.155 97.7044 295.201L83.5366 279.467C81.7758 277.511 79.4616 276.137 76.9016 275.528L56.3037 270.625C52.4379 269.705 49.3025 266.888 47.976 263.142L40.9081 243.183C40.0296 240.702 38.4173 238.548 36.2853 237.005L19.1315 224.593C15.9122 222.264 14.0936 218.461 14.3016 214.492L15.4096 193.348C15.5473 190.72 14.8823 188.113 13.5029 185.871L2.40472 167.84C0.321833 164.456 0.0970956 160.246 1.80782 156.66L10.9231 137.549C12.056 135.174 12.4395 132.51 12.0228 129.912L8.66974 109.005C8.04046 105.082 9.44372 101.107 12.3968 98.4478L28.1315 84.28C30.0871 82.5192 31.4608 80.205 32.0702 77.645L36.9728 57.0471C37.8929 53.1813 40.7105 50.0459 44.4564 48.7194L64.4152 41.6515C66.8958 40.773 69.0505 39.1608 70.5931 37.0288L83.005 19.875C85.3345 16.6556 89.1375 14.837 93.1058 15.045L114.25 16.153C116.878 16.2907 119.486 15.6257 121.727 14.2464L139.758 3.14813Z" stroke="#FFD369" stroke-width="1.25822"/>
+                            </svg>
+                            <span class="service_title">Brand Experiences</span>
+                            
                             <div class="service_text">
                                 <ul>
                                     <li>Marketing & Promotion</li>
@@ -103,9 +152,12 @@
                         </div>
                     </div>
                     <div class="services_item">
-                        <div class="service js-animation">
-                            <img class="service_bg" src="src/img/shapes/shape3.svg" alt="">
-                            <img class="service_fill" src="src/img/shapes/filled3.svg" alt="">
+                        <div class="service service__purple js-animation">
+                            <svg class="service_bg js-animation" width="262" height="295" viewBox="0 0 262 295" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="service_bg-border service_bg-border__purple" d="M260.752 0.629124C260.567 37.9519 243.975 70.8948 218.687 90.8662L217.265 91.9891H219.077H260.752C260.567 129.312 243.975 162.255 218.687 182.226L217.265 183.349H219.077H260.752C260.45 244.45 216.205 293.753 161.815 293.753H0.629112L0.629123 0.629112L260.752 0.629124Z" stroke="#9870FF" stroke-width="1.25822"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M115.681 48.8701H121.633V92.5347C121.633 106.998 133.358 118.723 147.821 118.723H191.485V125.382H147.821C133.358 125.382 121.633 137.107 121.633 151.57V194.525H115.681V151.57C115.681 137.107 103.956 125.382 89.4932 125.382H45.8296V118.723H89.4932C103.956 118.723 115.681 106.998 115.681 92.5347V48.8701Z" fill="#9870FF"/>
+                            </svg>
+                            <span class="service_title">Digital and Hybrid experiences</span>
                             <div class="service_text">
                                 <ul>
                                     <li>AR/VR/MIXR Production</li>
@@ -262,24 +314,91 @@
                 <div>
                     <div class="gallery_row">
                         <h4 class="gallery_subtitle">CITF 2021</h4>
-                        <div class="gallery_wrapper">
-                            <img src="images/CIFT 2021/1.gif" alt="" class="gallery_image">
-                            <img src="images/CIFT 2021/2.gif" alt="" class="gallery_image">
-                            <img src="images/CIFT 2021/3.gif" alt="" class="gallery_image">
-                            <img src="images/CIFT 2021/4.gif" alt="" class="gallery_image">
+                        <div class="gallery_items gallery_items__pattern-1 js-slider-gallery">
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2021/1.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2021/2.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2021/3.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2021/4.gif" alt="" class="gallery_image js-animation">
+                            </div>
                         </div>
                     </div>
                     <div class="gallery_row">
                         <h4 class="gallery_subtitle">CITF 2019</h4>
+                        <div class="gallery_items gallery_items__pattern-2 js-slider-gallery">
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2019/2019-1.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2019/2.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/CIFT_2019/3.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                        </div>
                     </div>
                     <div class="gallery_row">
                         <h4 class="gallery_subtitle">Baker Mackenzie Legal</h4>
+                        <div class="gallery_items gallery_items__pattern-3 js-slider-gallery">
+                            <div class="gallery_item">
+                                <img src="images/Legal_Day/1.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/Legal_Day/2.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/Legal_Day/3.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                            <div class="gallery_item">
+                                <img src="images/Legal_Day/4.gif" alt="" class="gallery_image js-animation">
+                            </div>
+                        </div>
                     </div>
-                    <div class="gallery_row">
-                        <h4 class="gallery_subtitle">CQC</h4>
+
+                    <div class="gallery_more">
+                        <button class="more-button">
+                            <div class="more-button_bg"></div>
+                            <span class="more-button_text">Explore more</span>
+                        </button>
                     </div>
-                    <div class="gallery_row">
-                        <h4 class="gallery_subtitle">Mackenzie Legal Day</h4>
+                    <div class="gallery_hidden">
+                        <div class="gallery_row">
+                            <h4 class="gallery_subtitle">CQC</h4>
+                            <div class="gallery_items gallery_items__pattern-4 js-slider-gallery">
+                                <div class="gallery_item">
+                                    <img src="images/CQC/1.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/CQC/2.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/CQC/3.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery_row">
+                            <h4 class="gallery_subtitle">Mackenzie Legal Day</h4>
+                            <div class="gallery_items gallery_items__pattern-1 js-slider-gallery">
+                                <div class="gallery_item">
+                                    <img src="images/Legal_Day/1.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/Legal_Day/2.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/Legal_Day/3.gif" alt="" class="gallery_image js-animation">
+                                </div>
+                                <div class="gallery_item">
+                                    <img src="images/Legal_Day/4.gif" alt="" class="gallery_image">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -304,6 +423,7 @@
 
             <a name="team"></a>
             <div class="team">
+                <div class="team_particles js-particles" data-image="images/team-bg.jpg"></div>
                 <div class="team_title-wrapper">
                     <h2 class="team_title">
                         team
@@ -364,7 +484,10 @@
                 </div>
                 <div class="careers_items js-slider-careers">
                     <div class="career">
-                        <img class="career_icon" src="src/img/careers-shapes/career-1.svg" alt="">
+                        <div class="career_icon-wrapper js-popup-toggle" data-popup="cv">
+                            <img class="career_icon" src="src/img/careers-shapes/career-1.svg" alt="">
+                            <img class="career_icon-filled" src="src/img/careers-shapes/career-1-filled.svg" alt="">
+                        </div>
                         <span class="career_title">Creative director</span>
                         <p class="career_description">More than 10 years experience and strong portfolio and big stone bals</p>
                         <button class="career_button js-popup-toggle" data-popup="cv">
@@ -373,7 +496,10 @@
                         </button>
                     </div>
                     <div class="career">
-                        <img class="career_icon" src="src/img/careers-shapes/career-2.svg" alt="">
+                        <div class="career_icon-wrapper  js-popup-toggle" data-popup="cv">
+                            <img class="career_icon" src="src/img/careers-shapes/career-2.svg" alt="">
+                            <img class="career_icon-filled" src="src/img/careers-shapes/career-2-filled.svg" alt="">
+                        </div>
                         <span class="career_title">Event manager</span>
                         <p class="career_description">More than 10 years experience Use non-HomeKit devices in your HomeKit</p>
                         <button class="career_button js-popup-toggle" data-popup="cv">
@@ -483,7 +609,8 @@
                 <p class="contact-form_text">
                     Hello team! My name is 
                     <span contenteditable>Igor Lipnitsky</span> You can contact me at 
-                    <span contenteditable>Phone or mail</span> and take a look on my CV <a href="">Upload from disk</a>
+                    <span contenteditable>Phone or mail</span> and take a look on my CV <a class="js-file-upload-link" href="">Upload from disk</a>
+                    <input class="contact-form_file js-file-upload" type="file" name="cv" id="" >
                 </p>
                 <button class="contact-form_button">Send request</button>
             </form>

@@ -1,0 +1,50 @@
+.more-button {
+    @include button-reset;
+    height: 56px;
+    line-height: 56px;
+    color: $cBlue;
+    font-size: 18px;
+    padding: 0 20px;
+    min-width: 186px;
+    background: url(#{$img}/more-button.svg) no-repeat center / 100% 100%;
+    position: relative;
+    transition: .2s $easing transform;
+    @include desktop {
+        height: 72px;
+        line-height: 72px;
+        font-size: 24px;
+        min-width: 236px;
+    }
+
+    &:hover {
+        color: $bg_color;
+    }
+    &:active {
+        transform: scale(.9);
+    }
+
+    &_bg {
+        background: url(#{$img}/more-button-filled.svg) no-repeat center / 100% 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: .2s $easing opacity,
+                    .2s $easing border-radius,
+                    .2s $easing transform;
+    
+        .more-button:hover & {
+            opacity: 1;
+            transform: scale(1);
+            border-radius: 0;
+        }
+    }
+    &_text {
+        position: relative;
+        z-index: 1;
+    }
+}

@@ -37,6 +37,10 @@
         }
         &::before {
             top: 0;
+            content: none;
+        }
+        &:first-of-type::before {
+            content: '';
         }
         &::after {
             bottom: 0;

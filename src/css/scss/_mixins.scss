@@ -48,7 +48,7 @@
     }
     @include desktop() {
         padding-left: $side-indent__desktop;
-        padding-right: $side-indent__desktop;
+        padding-right: 0;
     }
 
 }
