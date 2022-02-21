@@ -46,7 +46,7 @@
     &_form-button {
         @include button-reset;
         position: absolute;
-        bottom: 4px;
+        bottom: 3px;
         right: 2px;
         width: 122px;
         height: 49px;
@@ -55,6 +55,13 @@
         color: $color;
         transition: .2s $easeInCirc color,
                     .2s $easeInCirc transform;
+        @include desktop {
+            height: 78px;
+            font-size: 24px;
+            width: 180px;
+            bottom: 6px;
+            right: 6px;
+        }
 
         &:hover,
         &:focus {
@@ -85,6 +92,24 @@
         position: relative;
     }
     &_textarea {
+        padding-right: 150px;
         padding-bottom: 50px;
+        overflow: hidden;
+        @include tablet {
+            padding-bottom: 14px;
+            height: 56px;
+        }
+        @include desktop {
+            padding-right: 210px;
+            height: 90px;
+        }
+
+        &.expanded {
+            padding-bottom: 50px;
+            height: 136px;
+            @include desktop {
+                padding-bottom: 90px;
+            }
+        }
     }
 }

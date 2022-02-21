@@ -26,6 +26,7 @@
                 <span class="get-quote_text">Get a quote</span>
             </button>
             <button class="menu-toggle">
+                <div class="menu-toggle_bg"></div>
                 <div class="menu-toggle_filled-bg"></div>
                 <div class="menu-toggle_close-bg"></div>
             </button>
@@ -59,10 +60,15 @@
                     <span><strong>Experiential</strong> Event</span>
                     <span>Production <strong>Agency</strong></span>
                 </h1>
-                <div class="about_text">
+                <div class="about_text js-mask-holder">
                     <p>We create unforgettable experiences that connect brands with people in the most exciting, enjoyable way possible.</p>
-                    <h3>From corporate events to private parties, we'll work with you to create an experience that's uniquely tailored to your needs and vision.</h3>
+                    <h3>
+                        From corporate events to private parties, we'll work with you to create an experience that's uniquely tailored to your needs and vision.
+                        <a href="" class="js-popup-toggle" data-popup="request">Contact us</a>
+                    </h3>
+                    <div class="about_mask js-mask"></div>
                 </div>
+
             </div>
 
             <a name="what-we-do"></a>
@@ -70,9 +76,9 @@
                 <div class="services_title-wrapper">
                     <h2 class="services_title">What we do</h2>
                 </div>
-                <div class="services_holder">
+                <div class="services_holder  js-animation">
                     <div class="services_item">
-                        <div class="service service__red js-animation">
+                        <div class="service service__red">
                             <svg class="service_bg" width="267" height="348" viewBox="0 0 267 348" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <style>
                                 @keyframes figure { 0% { stroke-dashoffset: -656px; animation-timing-function: cubic-bezier(.5,0,.5,1); } 100% { stroke-dashoffset: -1311px; } }
@@ -153,9 +159,28 @@
                     </div>
                     <div class="services_item">
                         <div class="service service__purple js-animation">
-                            <svg class="service_bg js-animation" width="262" height="295" viewBox="0 0 262 295" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="service_bg" width="262" height="295" viewBox="0 0 262 295" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <mask id="Mask-1">
+                                        <ellipse class="figure-7" rx="103.5" ry="103" fill="#ffffff" stroke="none" transform="translate(103.5,103) scale(0,0)"/>
+                                    </mask>
+                                </defs>
+                                <style>
+                                    @keyframes a0_t { 0% { transform: translate(103.508px,103.065px) rotate(0deg) translate(-103.508px,-103.065px); animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { transform: translate(103.508px,103.065px) rotate(180deg) translate(-103.508px,-103.065px); } }
+                                    @keyframes a0_d { 0% { d: path('M99.3037,0.187988L107.711,0.187988L107.711,57.2346C107.711,57.2346,149.338,98.8616,149.338,98.8616L206.385,98.8616L206.385,108.268L149.338,108.268C149.338,108.268,107.711,149.895,107.711,149.895L107.711,205.942L99.3037,205.942L99.3037,149.895C99.3037,149.895,57.6767,108.268,57.6767,108.268L0.630859,108.268L0.630859,98.8616L57.6767,98.8616C57.6767,98.8616,99.3037,57.2346,99.3037,57.2346L99.3037,0.187988Z'); } 50% { d: path('M99.3037,0.187988L107.711,0.187988L107.711,57.2346C107.711,57.2346,149.338,98.8616,149.338,98.8616L206.385,98.8616L206.385,108.268L149.338,108.268C149.338,108.268,107.711,149.895,107.711,149.895L107.711,205.942L99.3037,205.942L99.3037,149.895C99.3037,149.895,57.6767,108.268,57.6767,108.268L0.630859,108.268L0.630859,98.8616L57.6767,98.8616C57.6767,98.8616,99.3037,57.2346,99.3037,57.2346L99.3037,0.187988Z'); animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { d: path('M99.3037,0.187988L107.711,0.187988L107.711,57.2346C107.711,80.2245,126.348,98.8616,149.338,98.8616L206.385,98.8616L206.385,108.268L149.338,108.268C126.348,108.268,107.711,126.905,107.711,149.895L107.711,205.942L99.3037,205.942L99.3037,149.895C99.3037,126.905,80.6667,108.268,57.6767,108.268L0.630859,108.268L0.630859,98.8616L57.6767,98.8616C80.6667,98.8616,99.3037,80.2245,99.3037,57.2346L99.3037,0.187988Z'); } }
+                                    @keyframes a1_t { 0% { transform: translate(103.5px,103px) scale(0,0); animation-timing-function: cubic-bezier(0.455,0.03,0.515,0.955); } 100% { transform: translate(103.5px,103px) scale(1,1); } }
+                                
+                                    .animated .figure-7 {
+                                        animation: 1s linear both a1_t;
+                                    }
+                                    .animated .figure-8 {
+                                        animation: 1s linear both a0_t, 1s linear both a0_d;
+                                    }
+                                </style>
+                                <g mask="url(#Mask-1)" style="transform: scale(0.72) translate(22.5%, 17%)">
+                                    <path class="figure-8" d="M99.3037,0.187988L107.711,0.187988L107.711,57.2346L149.338,98.8616L206.385,98.8616L206.385,108.268L149.338,108.268L107.711,149.895L107.711,205.942L99.3037,205.942L99.3037,149.895L57.6767,108.268L0.630859,108.268L0.630859,98.8616L57.6767,98.8616L99.3037,57.2346L99.3037,0.187988Z" fill="#9870FF" fill-rule="nonzero" transform="translate(103.508,103.065) translate(-103.508,-103.065)" />
+                                </g>
                                 <path class="service_bg-border service_bg-border__purple" d="M260.752 0.629124C260.567 37.9519 243.975 70.8948 218.687 90.8662L217.265 91.9891H219.077H260.752C260.567 129.312 243.975 162.255 218.687 182.226L217.265 183.349H219.077H260.752C260.45 244.45 216.205 293.753 161.815 293.753H0.629112L0.629123 0.629112L260.752 0.629124Z" stroke="#9870FF" stroke-width="1.25822"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M115.681 48.8701H121.633V92.5347C121.633 106.998 133.358 118.723 147.821 118.723H191.485V125.382H147.821C133.358 125.382 121.633 137.107 121.633 151.57V194.525H115.681V151.57C115.681 137.107 103.956 125.382 89.4932 125.382H45.8296V118.723H89.4932C103.956 118.723 115.681 106.998 115.681 92.5347V48.8701Z" fill="#9870FF"/>
                             </svg>
                             <span class="service_title">Digital and Hybrid experiences</span>
                             <div class="service_text">
@@ -413,7 +438,7 @@
                     </span>
                 </h2>
                 <form class="connect_form">
-                    <textarea class="connect_textarea" placeholder="Type your idea and contacts here"></textarea>
+                    <textarea class="connect_textarea js-textarea" placeholder="Type your idea and contacts here"></textarea>
                     <button class="connect_form-button">
                         <div class="connect_form-button-bg"></div>
                         <span class="connect_form-button-text">Send</span>
@@ -423,7 +448,9 @@
 
             <a name="team"></a>
             <div class="team">
-                <div class="team_particles js-particles" data-image="images/team-bg.jpg"></div>
+                <!--
+                    <div class="team_particles js-particles" data-image="images/team-bg.jpg"></div>
+                -->
                 <div class="team_title-wrapper">
                     <h2 class="team_title">
                         team

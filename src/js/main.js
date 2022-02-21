@@ -238,6 +238,23 @@ if (moreButtonElement) {
     }, false)
 }
 
+// textarea
+const textareaElement = document.querySelector('.js-textarea');
+if (textareaElement) {
+    textareaElement.addEventListener('input', resizeTextarea)
+}
+
+function resizeTextarea (e) {
+    this.prevHeight = parseInt(e.target.style.height) || 0;
+    const { scrollHeight } = e.target;
+    if (scrollHeight > 70) {
+        e.target.classList.add('expanded');
+        if (scrollHeight > this.prevHeight) {
+            e.target.style.height = `${scrollHeight}px`;
+        }
+    }
+}
+
 // upload file
 const fileUploadLinkElement = document.querySelector('.js-file-upload-link');
 const fileUploadElement = document.querySelector('.js-file-upload');
@@ -255,3 +272,12 @@ if (fileUploadElement) {
         fileUploadLinkElement.classList.add('filled');
     })
 }
+
+// mask
+const maskHolderElements = document.querySelectorAll('.js-mask-holder');
+maskHolderElements.forEach(maskHolderElement => maskHolderElement.addEventListener('mousemove', (e) => {
+    const { layerX: x, layerY: y } = e;
+    const maskElement = maskHolderElement.querySelector('.js-mask');
+    maskElement.style.left = `${x}px`
+    maskElement.style.top = `${y}px`
+}, false));

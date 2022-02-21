@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
     @include tablet {
         padding-left: $side-indent__tablet;
         padding-right: $side-indent__tablet;

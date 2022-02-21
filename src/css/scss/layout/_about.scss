@@ -10,10 +10,24 @@
         margin-bottom: 184px;
     }
 
+    //&::before {
+    //    content: '';
+    //    position: absolute;
+    //    left: 0;
+    //    top: 0;
+    //    right: 0;
+    //    bottom: 0;
+    //    z-index: -1;
+    //}
+
     &_text {
         width: 80%;
         text-indent: 1em;
         max-width: 700px;
+        overflow: hidden;
+        position: relative;
+        background: $bg_color url(#{$img}/bg.jpg) repeat;
+
     }
 
     h1 {
@@ -48,12 +62,37 @@
             }
         }
     }
+    &_mask {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        left: 100%;
+        top: 100%;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: darken;
+        pointer-events: none;
+        background: radial-gradient($cRed, transparent 75%);
+        @include desktop {
+            width: 600px;
+            height: 600px;
+        }
+
+    }
 
     p {
-        @include gradiented-text($cRed, $color);
         font-size: 18px;
         @include desktop {
             font-size: 32px;
+        }
+    }
+    a {
+        color: $cYellow;
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
         }
     }
 }

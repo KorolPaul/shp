@@ -43,7 +43,6 @@
 
 .menu-toggle {
     @include button-reset;
-    background: url(#{$img}/menu.svg) no-repeat center center / contain;
     height: 48px;
     width: 48px;
     margin: 0 0 0 20px;
@@ -68,6 +67,20 @@
         transform: rotate(180deg);
     }
 
+    &_bg {
+        background: url(#{$img}/menu.svg) no-repeat center center / contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+        transition: .2s $easing opacity;
+
+        .menu-opened & {
+            opacity: 0;
+        }
+    }
     &_filled-bg {
         background: url(#{$img}/menu-filled.svg) no-repeat center center / contain;
         position: absolute;
@@ -80,17 +93,21 @@
 
         .menu-toggle:hover & {
             opacity: 1;
+
+            .menu-opened & {
+                opacity: 0;
+            }
         }
     }
     &_close-bg {
-        background: $cYellow url(#{$img}/menu-close.svg) no-repeat center center / contain;
+        background: url(#{$img}/menu-close.svg) no-repeat center center / contain;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
         opacity: 0;
-        transition: .2s $easing opacity .1s,
+        transition: .2s $easing opacity,
                     .2s $easing transform;
 
         .menu-opened & {

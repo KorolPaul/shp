@@ -9,7 +9,7 @@
     transition: .8s $easeOutCirc transform,
                 .8s $easeOutCirc opacity;
 
-    &.animated {
+    .services_holder.animated & {
         transform: translateY(0);
         opacity: 1;
     }
@@ -121,7 +121,7 @@
         }
     }
 
-    &.animated:hover {
+    .services_holder.animated &:hover {
         .service_bg-border {
             fill: $cRed;
         }
