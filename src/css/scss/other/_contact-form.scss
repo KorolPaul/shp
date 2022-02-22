@@ -29,6 +29,10 @@
             &:focus {
                 color: rgba($color, 1);
             }
+
+            &.active {
+                color: $color;
+            }
         }
         a {
             font-weight: 400;

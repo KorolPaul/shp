@@ -33,13 +33,69 @@
         margin: 10px 0;
         font-family: $font-family__monument;
         text-transform: uppercase;
+        overflow: hidden;
+        position: relative;
         text-decoration: underline;
         @include tablet {
             white-space: nowrap;
             margin: 15px 0;
+            text-decoration: none;
+        }
+
+        &::after {
+            @include tablet {
+                content: '';
+                position: absolute;
+                bottom: 7px;
+                left: 0;
+                width: 100%;
+                border-bottom: 2px solid currentColor;
+            }
         }
     }
-}
+    &_link-text {
+        display: block;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: .1s $easeInOutCirc opacity .15s,
+                    .1s $easeInOutCirc transform .15s;
+
+        .menu-opened & {
+            transform: translateY(0);
+            opacity: 1;
+            transition-duration: .2s;
+        }
+
+        @for $i from 1 through 10 {
+            .menu_link:nth-child(#{$i}) & {
+                transition-delay: #{$i * 0.12}s;
+            }
+        }
+    }
+    &_char {
+        @include tablet {
+            display: inline-block;
+            transition: .1s $easing transform,
+                        .1s $easing opacity;
+        }
+
+                    
+        .menu_link:hover & {
+            @include tablet {
+                animation: char .04s $easeOutCirc both;
+                opacity: 0;
+                transform: translateX(100%);
+            }
+
+            @for $i from 1 through 40 {
+                &__#{$i} {
+                    animation-duration: #{$i * 0.04}s;
+                    animation-delay: #{$i * 0.04}s;
+                }
+            }
+        }
+    }
+ }
 
 .menu-toggle {
     @include button-reset;
@@ -120,5 +176,16 @@
         &:active {
             transform: scale(1);
         }
+    }
+}
+
+@keyframes char {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
     }
 }

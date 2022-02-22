@@ -32,15 +32,14 @@
         top: 0;
         height: 100%;
         width: 100%;
-        opacity: 0;
         z-index: 2;
-        transform: translateY(50px);
-        transition: .3s $easeInOutCirc opacity .1s,
-                    .3s $easeInOutCirc transform .1s;
+        opacity: 0;
+        transition: .2s $easing opacity .1s;
 
         .service:hover & {
-            transform: translateY(0);
             opacity: 1;
+            transition-duration: 0s;
+            transition-delay: 0s;
         }
 
         .service__yellow & {
@@ -98,6 +97,29 @@
             }
         }
     }
+    &_text-line {
+        display: block;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: .1s $easeInOutCirc opacity .1s,
+                    .1s $easeInOutCirc transform .1s;
+
+        
+        .service:hover & {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        @for $i from 1 through 10 {
+            li:nth-child(#{$i}) & {
+                transition-delay: #{$i * 0.12}s;
+            }
+        }
+        @for $i from 10 through 1 {
+            li:nth-child(#{$i}):hover & {
+                transition-delay: #{$i * 0.12}s;
+            }
+        }
+    }
 
     ul {
         padding: 0;
@@ -109,7 +131,8 @@
         font-size: 14px;
         line-height: 18px;
         white-space: nowrap;
-        border-bottom: 1px solid currentColor;
+        position: relative;
+        overflow: hidden;
         @include tablet {
             font-size: 16px;
         }
@@ -118,11 +141,41 @@
             line-height: 24px;
         }
 
-        &:first-child {
-            border-top: 1px solid currentColor;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid currentColor;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: .2s $easeInOutCirc transform;
+        }
+        &:first-child::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 1px solid currentColor;
+            transform-origin: left center;
+            transform: scaleX(0);
+            transition: .2s $easeInOutCirc transform;
+        }
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i})::after {
+                transition-delay: #{$i * 0.07}s;
+            }
         }
     }
-
+    &:hover li::after {
+        transform: scaleX(1);
+    }
+    &:hover li::before {
+        transform: scaleX(1);
+    }
+    
     .services_holder.animated &:hover {
         .service_bg-border {
             fill: $cRed;
@@ -136,6 +189,10 @@
     }
     &_bg-border {
         fill: transparent;
-        transition: .2s ease-in-out fill;
+        transition: .2s ease-in-out fill .2s;
+
+        .service:hover & {
+            transition-delay: 0s;
+        }
     }
 }

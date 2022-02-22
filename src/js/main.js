@@ -118,6 +118,25 @@ if (fadeMobileElement) {
     fadeMobileElement.addEventListener('click', closeAllOpened);
 }
 
+// menu links hover
+const menuLinksElements = document.querySelectorAll('.menu_link-text');
+menuLinksElements.forEach(el => {
+    let index = 1;
+    el.childNodes.forEach(node => {
+        if (node.innerText) {
+            const text = node.innerText;
+            node.innerText = '';
+            Array.from(text).forEach(char => {
+                const charElement = document.createElement('span');
+                charElement.className = `menu_char menu_char__${index}`;
+                charElement.innerText = char;
+                node.appendChild(charElement);
+                index++;
+            })
+        }
+    })
+});
+
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
@@ -180,7 +199,7 @@ if (animatedElements.length) {
     const observerCallback = function (e) {
         const { target, intersectionRatio } = e[0];
 
-        if (intersectionRatio > 0.7) {
+        if (intersectionRatio > 0.5) {
             target.classList.add('animated');
         }
         if (target.dataset.src) {
@@ -260,7 +279,7 @@ if (fileUploadElement) {
     })
 }
 
-// mask
+// glow mask
 const maskHolderElements = document.querySelectorAll('.js-mask-holder');
 maskHolderElements.forEach(maskHolderElement => maskHolderElement.addEventListener('mousemove', (e) => {
     const { layerX: x, layerY: y } = e;
@@ -268,3 +287,24 @@ maskHolderElements.forEach(maskHolderElement => maskHolderElement.addEventListen
     maskElement.style.left = `${x}px`
     maskElement.style.top = `${y}px`
 }, false));
+
+// form inputs
+const contentEditableSpans = document.querySelectorAll('span[contenteditable]');
+contentEditableSpans.forEach(el => el.addEventListener('click', (e) => {
+    const { target } = e;
+    var range = document.createRange()
+    var sel = window.getSelection()
+
+    range.setStart(target.childNodes[0], 0)
+    range.collapse(true)
+
+    sel.removeAllRanges()
+    sel.addRange(range)
+}))
+contentEditableSpans.forEach(el => el.addEventListener('keydown', (e) => {
+    const { target } = e;
+    if (!target.classList.contains('active')) {
+        target.innerText = '';
+        target.classList.add('active');
+    }
+}))

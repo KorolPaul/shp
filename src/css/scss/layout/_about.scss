@@ -64,7 +64,10 @@
             width: 0;
             right: 0;
             bottom: -40px;
-            transition: .5s $easeInOutCirc width;
+            width: 100%;
+            transform: scale(0);
+            transform-origin: left center;
+            transition: .5s $easeInOutCirc transform;
             @include tablet {
                 bottom: -35px;
             }
@@ -77,19 +80,31 @@
         }
 
         &.animated::after {
-            width: 100%;
+            transform: scale(1);
         }
 
-        span {
-            display: block;
-            @include desktop {
-                white-space: nowrap
-            }
+        
+    }
+    &_title-line {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        @include desktop {
+            white-space: nowrap
+        }
 
-            &:first-child {
-                text-align: left;
-                margin: 0 0 12px;
-            }
+        &:first-child {
+            text-align: left;
+            margin: 0 0 12px;
+        }
+    }
+    &_title-text {
+        transform: translateY(100%);
+        animation: line-appearance 1s $easeOutCirc .6s forwards;
+        display: block;
+
+        .about_title-line:first-child & {
+            animation-delay: .3s;
         }
     }
     &_mask {
@@ -133,5 +148,14 @@
         &:active {
             opacity: .8;
         }
+    }
+}
+
+@keyframes line-appearance {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0%);
     }
 }
