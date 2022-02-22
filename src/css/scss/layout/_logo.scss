@@ -14,6 +14,9 @@
     &_image {
         display: block;
         transition: .5s linear transform;
+        @include desktop {
+            width: 74px;
+        }
 
         .logo:hover & {
             transform: scale(1.1);

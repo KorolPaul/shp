@@ -152,18 +152,6 @@ popupCloseElements.forEach(el => el.addEventListener('click', (e) => {
 }));
 
 
-/* load more */
-const loadMoreButton = document.querySelector('.more-button');
-if (loadMoreButton) {
-    loadMoreButton.addEventListener('click', function(e) {
-        e.target.classList.add('active');
-
-        setTimeout(() => {
-            e.target.classList.remove('active');
-        }, 1000);
-    });
-}
-
 /* cookies */
 const hasCookies = Cookies.get('CookieNotificationCookie');
 
@@ -233,8 +221,7 @@ function moveTooltip(e) {
 const moreButtonElement = document.querySelector('.more-button');
 if (moreButtonElement) {
     moreButtonElement.addEventListener('click', (e) => {
-        e.target.parentNode.parentNode.style.display = 'none';
-        e.target.parentNode.parentNode.nextElementSibling.style.display = 'block';
+        moreButtonElement.parentNode.remove(moreButtonElement);
     }, false)
 }
 

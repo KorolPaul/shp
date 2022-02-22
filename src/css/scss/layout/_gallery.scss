@@ -1,12 +1,16 @@
 .gallery {
     position: relative;
     padding: 0 0 0 16px;
-    margin: 0 0 80px;
+    margin: 0 0 120px;
     @include tablet {
         padding-left: 50px;
+        margin-bottom: 80px;
     }
     @include desktop {
-        margin-bottom: 110px;
+        margin-bottom: 160px;
+    }
+    @include desktop-large {
+        margin-bottom: 80px;
     }
 
     &_title-wrapper {
@@ -20,16 +24,38 @@
         line-height: 1;
         text-transform: uppercase;
     }
+    &_row {
+        .gallery_more ~ & {
+            display: none;
+        }
+    }
     &_subtitle {
         font-size: 18px;
         padding: 0 0 0 54px;
+        margin: 24px 0 18px;
+        white-space: nowrap;
         background: no-repeat left 34px center / contain;
         @include tablet {
             background-position: center;
             text-align: center;
+            
         }
         @include desktop {
             font-size: 32px;
+            margin-top: 40px;
+        }
+
+        &.js-animation {
+            @include tablet {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: .5s $easeOutCirc opacity,
+                            .5s $easeOutCirc transform;
+            }
+        }
+        &.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         &::before {
@@ -52,6 +78,7 @@
             @include desktop {
                 height: 93px;
                 line-height: 93px;
+                margin-top: 0;
             }
         }
         .gallery_row:nth-child(3) & {
@@ -61,6 +88,10 @@
             @include desktop {
                 height: 100px;
                 line-height: 100px;
+                margin-top: 70px;
+            }
+            @include desktop-large {
+                margin-top: 90px;
             }
         }
         .gallery_row:nth-child(4) & {
@@ -79,6 +110,7 @@
             @include desktop {
                 height: 92px;
                 line-height: 92px;
+                margin-top: 70px;
             }
         }
     }
@@ -175,16 +207,19 @@
     &_image {
         max-width: 60vw;
         position: relative;
-        @include tablet {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: .5s $easeOutCirc opacity,
-                        .5s $easeOutCirc transform;
-        }
+        
         @include desktop {
             width: 100%;
         }
 
+        &.js-animation {
+            @include tablet {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: .5s $easeOutCirc opacity,
+                            .5s $easeOutCirc transform;
+            }
+        }
         &.animated {
             opacity: 1;
             transform: translateY(0);
@@ -303,8 +338,11 @@
         }
     }
     &_more {
-        padding: 40px 0 0;
+        padding: 30px 0 0;
         text-align: center;
+        @include tablet {
+            padding-top: 40px;
+        }
     }
     &_hidden {
         display: none;

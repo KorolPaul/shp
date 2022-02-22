@@ -1,17 +1,18 @@
 .team {
     position: relative;
     padding: 0 0 0 48px;
-    margin: 0 -24px 0 0;
+    margin: 0 -24px 30px 0;
     @include tablet {
         margin-right: 0;
         padding-left: 50px;
     }
     @include desktop {
         padding-left: 145px;
-        margin-bottom: 110px;
+        margin-bottom: 150px;
     }
     @include desktop-large {
         padding-left: 170px;
+        margin-bottom: 130px;
     }
 
     &_title-wrapper {
@@ -38,11 +39,14 @@
         overflow: visible;
         user-select: none;
         cursor: none;
+        @include tablet {
+            width: 172px;
+        }
         @include desktop {
-            width: 210px;
+            width: 240px;
         }
         @include desktop-large {
-            width: 280px;
+            width: 300px;
         }
     }
     &_member-tooltip {

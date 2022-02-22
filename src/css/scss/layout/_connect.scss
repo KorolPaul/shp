@@ -3,24 +3,42 @@
     @include tablet {
         margin-bottom: 100px;
     }
+    @include desktop {
+        margin-bottom: 120px;
+    }
+    @include desktop-large {
+        max-width: 1130px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+    }
 
     &_title {
-        background: $bg_color url(#{$img}/connect-bg.svg) no-repeat center / contain;
+        background: url(#{$img}/connect-bg.svg) no-repeat center / auto 100%;
         text-transform: uppercase;
         display: flex;
         flex-direction: column;
         margin: 0 0 35px;
+        line-height: 28px;
+        letter-spacing: 0.02em;
         @include desktop {
-            margin-bottom: 45px
+            margin-bottom: 45px;
+            padding: 10px 0;
+            line-height: 42px;
         }
         @include desktop-large {
-            margin-bottom: 60px
+            margin-bottom: 45px;
+            font-size: 44px;
         }
 
         span {
             display: block;
             @include tablet {
                 width: 60%;
+            }
+            @include desktop-large {
+                width: 50%;
+                line-height: 1;
             }
             
             &:first-child {

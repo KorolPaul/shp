@@ -5,9 +5,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin: 0 0 80px;
+    margin: 0 0 34px;
+    @include tablet {
+        margin-bottom: 42px;
+    }
     @include desktop {
-        margin-bottom: 184px;
+        margin-bottom: 120px;
     }
 
     //&::before {
@@ -27,13 +30,32 @@
         overflow: hidden;
         position: relative;
         background: $bg_color url(#{$img}/bg.jpg) repeat;
-
+        @include tablet {
+            width: 55%;
+        }
+        @include desktop {
+            width: 70%;
+        }
     }
 
     h1 {
+        font-size: 9vw;
+        letter-spacing: -0.06em;
         text-align: right;
         text-transform: uppercase;
         position: relative;
+        @include tablet {
+            font-size: 5vw;
+            letter-spacing: -0.05em;
+            line-height: 1;
+        }
+        @include desktop {
+            font-size: 5.5vw;
+            line-height: .9;
+        }
+        @include desktop-large {
+            font-size: 5.6vw;
+        }
 
         &::after {
             content: '';
@@ -43,6 +65,9 @@
             right: 0;
             bottom: -40px;
             transition: .5s $easeInOutCirc width;
+            @include tablet {
+                bottom: -35px;
+            }
             @include desktop {
                 bottom: -55px;
             }
@@ -60,25 +85,38 @@
             @include desktop {
                 white-space: nowrap
             }
+
+            &:first-child {
+                text-align: left;
+                margin: 0 0 12px;
+            }
         }
     }
     &_mask {
-        position: absolute;
-        width: 400px;
-        height: 400px;
-        left: 100%;
-        top: 100%;
-        transform: translate(-50%, -50%);
-        mix-blend-mode: darken;
-        pointer-events: none;
-        background: radial-gradient($cRed, transparent 75%);
+        display: none;
         @include desktop {
-            width: 600px;
-            height: 600px;
+            display: block;
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            left: 100%;
+            top: 100%;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: darken;
+            pointer-events: none;
+            background: radial-gradient($cRed, transparent 75%);
+            @include desktop {
+                width: 600px;
+                height: 600px;
+            }
         }
-
     }
 
+    h3 {
+        @include desktop {
+            margin-top: 30px;
+        }
+    }
     p {
         font-size: 18px;
         @include desktop {
@@ -87,6 +125,7 @@
     }
     a {
         color: $cYellow;
+        text-decoration: underline;
 
         &:hover {
             opacity: .6;

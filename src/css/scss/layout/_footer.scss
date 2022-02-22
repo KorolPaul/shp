@@ -1,6 +1,7 @@
 .footer {
     background: $cYellow;
     color: $bg_color;
+    font-size: 20px;
 
     &_holder {
         @include layout;
@@ -28,6 +29,7 @@
         }
         @include desktop {
             gap: 72px;
+            justify-content: space-between;
         }
     }
     &_menu {
@@ -50,12 +52,18 @@
         }
     }
     &_subcolumn {
-        margin-bottom: 30px;
+        margin-bottom: 36px;
     }
     &_column-title {
         display: block;
         font-weight: 700;
         margin: 0 0 10px;
+    }
+    &_copyrights {
+
+        strong {
+            display: block;
+        }
     }
 
     a {

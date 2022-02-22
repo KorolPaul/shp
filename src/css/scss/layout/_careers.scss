@@ -6,12 +6,13 @@
         padding-left: 50px;
     }
     @include desktop {
-        margin-bottom: 110px;
+        margin-bottom: 174px;
         padding-left: 104px;
         margin-right: 0;
     }
     @include desktop-large {
         padding-left: 136px;
+        margin-bottom: 164px;
     }
 
     &_title-wrapper {
@@ -36,12 +37,15 @@
 
 .career {
     width: 188px;
+    @include tablet {
+        width: 220px;
+    }
     @include desktop {
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin: 0 0 72px;
+        margin: 0 0 100px;
     }
 
     &_icon-wrapper {
@@ -71,7 +75,6 @@
         top: 0;
         left: 0;
         height: 100%;
-        width: 100%;
         opacity: 0;
         transition: .2s $easing opacity;
 
@@ -97,10 +100,11 @@
         }
     }
     &_description {
+        line-height: 1.2;
         margin: 0 0 30px;
         user-select: none;
         @include desktop {
-            margin: 0 30px 0 0;
+            margin: 0 30px 0 20px;
             font-size: 20px;
             line-height: 32px;
             width: 25%;

@@ -1,33 +1,52 @@
 .partners {
-    margin: 0 0 80px;
+    margin: 0 0 88px;
+    @include tablet {
+        margin-bottom: 78px;
+    }
     @include desktop {
-        margin-bottom: 184px;
+        margin-bottom: 170px;
+    }
+    @include desktop-large {
+        margin-bottom: 180px;
     }
 
     &_title {
         font-size: 18px;
         margin: 0 0 30px;
+        text-align: center;
+        @include tablet {
+            margin-bottom: 42px;
+            padding-left: 85px;
+        }
         @include desktop {
             font-size: 32px;
             text-align: right;
             padding-right: 20vw;
         }
+        @include desktop-large {
+            padding-right: 350px;
+            margin-bottom: 50px;
+        }
     }
 
     &_row {
         padding: 26px 0;
-        
+        margin: 0 #{-$side-indent};
         overflow: hidden;
         display: flex;
         position: relative;
+        @include tablet {
+            margin: 0 #{-$side-indent__tablet};
+        }
         @include desktop {
             padding: 40px 0;
+            margin: 0;
         }
 
         &::before,
         &::after {
             content: '';
-            border-top: 1px solid $cRed;
+            border-top: 2px solid $cRed;
             position: absolute;
             left: 0;
             right: 0;
