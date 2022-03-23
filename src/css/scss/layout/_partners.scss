@@ -5,6 +5,7 @@
     }
     @include desktop {
         margin-bottom: 170px;
+        overflow: hidden;
     }
     @include desktop-large {
         margin-bottom: 180px;
@@ -21,26 +22,24 @@
         @include desktop {
             font-size: 32px;
             text-align: right;
-            padding-right: 20vw;
+            padding-left: 0;
+            text-align: left;
+            position: relative;
+            left: 47.4%;
         }
         @include desktop-large {
-            padding-right: 350px;
             margin-bottom: 50px;
+            left: 43.5%;
         }
     }
 
     &_row {
         padding: 26px 0;
-        margin: 0 #{-$side-indent};
         overflow: hidden;
         display: flex;
         position: relative;
-        @include tablet {
-            margin: 0 #{-$side-indent__tablet};
-        }
         @include desktop {
             padding: 40px 0;
-            margin: 0;
         }
 
         &::before,

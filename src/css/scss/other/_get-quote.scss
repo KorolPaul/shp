@@ -17,6 +17,7 @@
 
     &:hover {
         color: $bg_color;
+        transform: scale(1.05);
     }
     &:active {
         transform: scale(.9);

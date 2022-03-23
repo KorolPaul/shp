@@ -118,30 +118,13 @@ if (fadeMobileElement) {
     fadeMobileElement.addEventListener('click', closeAllOpened);
 }
 
-// menu links hover
-const menuLinksElements = document.querySelectorAll('.menu_link-text');
-menuLinksElements.forEach(el => {
-    let index = 1;
-    el.childNodes.forEach(node => {
-        if (node.innerText) {
-            const text = node.innerText;
-            node.innerText = '';
-            Array.from(text).forEach(char => {
-                const charElement = document.createElement('span');
-                charElement.className = `menu_char menu_char__${index}`;
-                charElement.innerText = char;
-                node.appendChild(charElement);
-                index++;
-            })
-        }
-    })
-});
-
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
 function disableScroll(e) {
-    e.preventDefault();
+    if (e.target.className !== 'popup_content' && !e.target.className.includes('contact-form')) {
+        e.preventDefault();
+    }
 }
 
 function openPopup(name) {
@@ -196,10 +179,11 @@ const animatedElements = document.querySelectorAll('.js-animation');
 const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
 
 if (animatedElements.length) {
+    const isMobile = screen.width <= 768
+    const ratio = isMobile ? 0.2 : 0.5
     const observerCallback = function (e) {
         const { target, intersectionRatio } = e[0];
-
-        if (intersectionRatio > 0.5) {
+        if (intersectionRatio > ratio) {
             target.classList.add('animated');
         }
         if (target.dataset.src) {
@@ -282,12 +266,21 @@ if (fileUploadElement) {
 // glow mask
 const maskHolderElements = document.querySelectorAll('.js-mask-holder');
 maskHolderElements.forEach(maskHolderElement => maskHolderElement.addEventListener('mousemove', (e) => {
-    const { layerX: x, layerY: y } = e;
-    const maskElement = maskHolderElement.querySelector('.js-mask');
-    maskElement.style.left = `${x}px`
-    maskElement.style.top = `${y}px`
-}, false));
+    animatedElements.forEach(el => {
+        const observer = new IntersectionObserver(observerCallback, {
+            rootMargin: '0px 0px -25% 0px',
+            threshold: thresholdSteps,
+            //root: document.body
+        });
+        observer.observe(el);
+    })
 
+
+    // const { clientX: x, clientY: y } = e;
+    // const maskElement = maskHolderElement.querySelector('.js-mask');
+    // maskElement.style.left = `${x}px`
+    // maskElement.style.top = `${y}px`
+}, false));
 // form inputs
 const contentEditableSpans = document.querySelectorAll('span[contenteditable]');
 contentEditableSpans.forEach(el => el.addEventListener('click', (e) => {
@@ -308,3 +301,28 @@ contentEditableSpans.forEach(el => el.addEventListener('keydown', (e) => {
         target.classList.add('active');
     }
 }))
+
+const formButtonElements = document.querySelectorAll('.js-send-form');
+formButtonElements.forEach(el => el.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.target.parentNode.classList.add('done');
+    
+    // FORM SUBMIT HANDLER MUST BE HERE
+}))
+
+// what we do 
+const serviceElements = document.querySelectorAll('.service');
+serviceElements.forEach(el => el.addEventListener('touchstart', (e) => {
+    serviceElements.forEach(el => el.classList.remove('active'))
+    e.currentTarget.classList.add('active')
+}));
+
+
+// connect form
+const connectFormButtonElement = document.querySelector('.js-connect-button');
+connectFormButtonElement.addEventListener('click', (e) => {
+    e.preventDefault();
+    // connect form handler
+    e.currentTarget.classList.add('active');
+    e.currentTarget.blur();
+});

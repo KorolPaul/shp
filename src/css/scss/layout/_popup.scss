@@ -14,7 +14,7 @@
     transition: .3s $easing transform,
                 .3s $easing opacity;
     @include desktop {
-        padding: 160px 64px 64px;
+        padding: 64px;
     }
 
     &.opened {
@@ -49,6 +49,13 @@
     &_content {
         overflow: auto;
         height: 100%;
+        max-width: 910px;
+        margin: auto;
+        @include tablet {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     h1 {

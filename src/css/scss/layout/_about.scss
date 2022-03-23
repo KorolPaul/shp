@@ -10,6 +10,8 @@
         margin-bottom: 42px;
     }
     @include desktop {
+        background: $bg_color url(#{$img}/bg.jpg) repeat;
+        overflow: hidden;
         margin-bottom: 120px;
     }
 
@@ -27,9 +29,7 @@
         width: 80%;
         text-indent: 1em;
         max-width: 700px;
-        overflow: hidden;
         position: relative;
-        background: $bg_color url(#{$img}/bg.jpg) repeat;
         @include tablet {
             width: 55%;
         }
@@ -54,7 +54,7 @@
             line-height: .9;
         }
         @include desktop-large {
-            font-size: 5.6vw;
+            font-size: 80px;
         }
 
         &::after {
@@ -67,6 +67,7 @@
             width: 100%;
             transform: scale(0);
             transform-origin: left center;
+            z-index: 1;
             transition: .5s $easeInOutCirc transform;
             @include tablet {
                 bottom: -35px;
@@ -114,8 +115,8 @@
             position: absolute;
             width: 400px;
             height: 400px;
-            left: 100%;
-            top: 100%;
+            left: 0%;
+            top: 0%;
             transform: translate(-50%, -50%);
             mix-blend-mode: darken;
             pointer-events: none;

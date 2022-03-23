@@ -39,6 +39,7 @@
     }
     &_item {
         margin: 0 0 40px;
+        align-self: center;
         @include tablet {
             position: absolute;
             margin: 0;
@@ -67,7 +68,6 @@
             top: 250px;
             width: 292px;
             height: 292px;
-            align-self: flex-start;
             @include desktop {
                 width: 440px;
                 height: 440px;

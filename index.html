@@ -35,7 +35,7 @@
         <nav class="menu">
             <a href="#what-we-do" class="menu_link">
                 <span class="menu_link-text">
-                    <strong>What</strong> <span>we</span> <strong>do</strong>
+                    <strong>What</strong> we <strong>do</strong>
                 </span>
             </a>
             <a href="#partners" class="menu_link">
@@ -45,7 +45,7 @@
             </a>
             <a href="#what-we-did" class="menu_link">
                 <span class="menu_link-text">
-                    <span>What</span> <strong>we did</strong>
+                    What <strong>we did</strong>
                 </span>
             </a>
             <a href="#team" class="menu_link">
@@ -65,7 +65,7 @@
         <div class="particles js-particles" data-image="images/canvas.webp"></div>
 
         <div class="content">
-            <div class="about">
+            <div class="about js-mask-holder">
                 <h1 class="js-animation">
                     <span class="about_title-line">
                         <span class="about_title-text"><strong>Experiential</strong> Event</span>
@@ -74,14 +74,14 @@
                         <span class="about_title-text">Production <strong>Agency</strong></span>
                     </span>
                 </h1>
-                <div class="about_text js-mask-holder">
+                <div class="about_text">
                     <p>We create unforgettable experiences that connect brands with people in the most exciting, enjoyable way possible.</p>
                     <h3>
-                        From corporate events to private parties, we'll work with you to create an experience that's uniquely tailored to your needs and vision.
+                        From corporate events to launching new products, we'll work with you to create an experience that's uniquely tailored to your needs and vision.
                         <a href="" class="js-popup-toggle" data-popup="request">Contact us</a>
                     </h3>
-                    <div class="about_mask js-mask"></div>
                 </div>
+                <div class="about_mask js-mask"></div>
 
             </div>
 
@@ -90,9 +90,9 @@
                 <div class="services_title-wrapper">
                     <h2 class="services_title">What we do</h2>
                 </div>
-                <div class="services_holder  js-animation">
+                <div class="services_holder">
                     <div class="services_item">
-                        <div class="service service__red">
+                        <div class="service service__red  js-animation">
                             <svg class="service_bg" width="267" height="348" viewBox="0 0 267 348" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <style>
                                 @keyframes figure { 0% { stroke-dashoffset: -656px; animation-timing-function: cubic-bezier(.5,0,.5,1); } 100% { stroke-dashoffset: -1311px; } }
@@ -193,7 +193,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="services_item">
+                    <div class="services_item js-animation">
                         <div class="service service__purple js-animation">
                             <svg class="service_bg" width="262" height="295" viewBox="0 0 262 295" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
@@ -236,6 +236,7 @@
                     </div>
                 </div>
             </div>
+        </div>
 
             <a name="partners"></a>
             <div class="partners">
@@ -370,7 +371,8 @@
                     </div>
                 </div>
             </div>
-
+        
+        <div class="content">
             <a name="what-we-did"></a>
             <div class="gallery">
                 <div class="gallery_title-wrapper">
@@ -436,7 +438,7 @@
                     </div>
                     <div class="gallery_row">
                         <h4 class="gallery_subtitle">CQC</h4>
-                        <div class="gallery_items gallery_items__pattern-4">
+                        <div class="gallery_items gallery_items__pattern-4 js-slider-gallery">
                             <div class="gallery_item">
                                 <img src="images/CQC/1.gif" alt="" class="gallery_image">
                             </div>
@@ -449,7 +451,7 @@
                         </div>
                     </div>
                     <div class="gallery_row">
-                        <h4 class="gallery_subtitle">Mackenzie Legal Day</h4>
+                        <h4 class="gallery_subtitle">Baker McKenzie Legal Day</h4>
                         <div class="gallery_items gallery_items__pattern-1 js-slider-gallery">
                             <div class="gallery_item">
                                 <img src="images/Legal_Day/1.gif" alt="" class="gallery_image">
@@ -470,8 +472,9 @@
 
             <div class="connect">
                 <h2 class="connect_title">
-                    <span>
+                    <span class="js-mask-holder">
                         We are looking for new <strong>and creative ways</strong>
+                        <span class="connect_mask js-mask"></span>
                     </span>
                     <span>
                         to <strong>connect</strong> with <strong>brands</strong>
@@ -479,9 +482,10 @@
                 </h2>
                 <form class="connect_form">
                     <textarea class="connect_textarea js-textarea" placeholder="Type your idea and contacts here"></textarea>
-                    <button class="connect_form-button">
+                    <button class="connect_form-button js-connect-button">
                         <div class="connect_form-button-bg"></div>
                         <span class="connect_form-button-text">Send</span>
+                        <span class="connect_form-check"></span>
                     </button>
                 </form>
             </div>
@@ -583,7 +587,7 @@
         <div class="footer_holder">
             <div class="footer_left">
                 <p class="footer_copyrights">
-                    <strong>Star Hills Production</strong>
+                    <strong class="footer_column-title">Star Hills Production</strong>
                     © 2022 
                 </p>
             </div>
@@ -592,7 +596,9 @@
                     <div class="footer_column">
                         <div class="footer_subcolumn">
                             <span class="footer_column-title">Let's talk!</span>
-                            <a href="tel:+357 940 586 55">+357 940 586 55</a>
+                            <div>
+                                <a href="tel:+357 940 586 55">+357 940 586 55</a>
+                            </div>
                             <div>
                                 <a href="#">Telegram</a>
                             </div>
@@ -607,14 +613,24 @@
                     </div>
                     <div class="footer_column">
                         <div class="footer_subcolumn">
-                            <a href="#">20 Louki Akrita <br> 3030 Limassol,<br>Cyprus</a>
+                            <a href="#">
+                                <div>
+                                    20 Louki Akrita
+                                </div>
+                                <div>
+                                    3030 Limassol,
+                                </div>
+                                <div>
+                                    Cyprus
+                                </div>
+                            </a>
                         </div>
                         <div class="footer_subcolumn">
                             <div>
-                                <a href="#">Privacy policy</a>
+                                <a href="#"class="js-popup-toggle" data-popup="cookie-policy" >Privacy policy</a>
                             </div>
                             <div>
-                                <a href="#">Cookie policy</a>
+                                <a href="#" class="js-popup-toggle" data-popup="cookie-policy">Cookie policy</a>
                             </div>
                         </div>
                     </div>
@@ -663,7 +679,10 @@
                     <span contenteditable>a conference, meet-up, etc. on date, number of people, location, budget</span>.
                     You can contact me at this <span contenteditable>email</span> address.
                 </p>
-                <button class="contact-form_button">Send request</button>
+                <button class="contact-form_button js-send-form">Send request</button>
+                <div class="contact-form_success">
+                    <p>We are on it! A few moments ago, we received your request. We will contact you shortly to discuss further details and next steps.</p>
+                </div>
             </form>
         </div>
     </div>
@@ -674,11 +693,14 @@
             <form class="contact-form">
                 <p class="contact-form_text">
                     Hello team! My name is 
-                    <span contenteditable>Igor Lipnitsky</span> You can contact me at 
+                    <span contenteditable>Write your name here</span> You can contact me at 
                     <span contenteditable>Phone or mail</span> and take a look on my CV <a class="js-file-upload-link" href="">Upload from disk</a>
                     <input class="contact-form_file js-file-upload" type="file" name="cv" id="" >
                 </p>
-                <button class="contact-form_button">Send request</button>
+                <button class="contact-form_button js-send-form">Send request</button>
+                <div class="contact-form_success">
+                    <p>We’ve received your CV, and we want to thank you for sending it! We'll be in touch soon. </p>
+                </div>
             </form>
         </div>
     </div>

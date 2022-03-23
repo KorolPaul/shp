@@ -1,17 +1,35 @@
 .contact-form {
-    background: url(#{$img}/contact-form-bg.svg) no-repeat left top / 41px auto;
     padding: 110px 0 0;
     max-width: 860px;
     margin: auto;
+    position: relative;
     @include desktop {
-        background-size: 72px auto;
-        padding: 0 0 0 120px;
+        padding: 30px 0 0 120px;
+    }
+
+    &::before {
+        content: '';
+        background: url(#{$img}/contact-form-bg.svg) no-repeat left top / 41px auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        @include desktop {
+            background-size: auto 72px;
+        }
+    }
+    &.done::before {
+        opacity: 0;
     }
 
     &_text {
         font-size: 24px;
         font-weight: 700;
         margin: 0 0 54px;
+        text-indent: 50px;
+        transition: .2s $easing opacity;
         @include desktop {
             font-size: 48px;
         }
@@ -31,7 +49,7 @@
             }
 
             &.active {
-                color: $color;
+                color: $cYellow;
             }
         }
         a {
@@ -50,11 +68,43 @@
                 color: $cYellow
             }
         }
+
+        .done & {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+    &_success {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 54px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        box-sizing: border-box;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(.8) translateY(-50%);
+        transition: .2s $easing transform,
+                    .2s $easing opacity;
+        @include desktop {
+            font-size: 48px;
+            line-height: 56px;
+            padding: 0 0 0 120px;
+        }
+
+        .opened .done & {
+            opacity: 1;
+            transform: scale(1) translateY(-50%);
+            pointer-events: all;
+        }
     }
     &_button {
         color: $cBlue;
         transition: .2s $easing background,
                     .2s $easing color,
+                    .2s $easing opacity
                     .2s $easing transform;
 
         &:hover {
@@ -64,6 +114,11 @@
         }
         &:active {
             transform: scale(1.02);
+        }
+
+        .done & {
+            opacity: 0;
+            pointer-events: none;
         }
     }
     &_file {

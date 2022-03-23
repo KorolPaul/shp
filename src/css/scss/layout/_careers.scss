@@ -21,6 +21,9 @@
         top: 0;
         transform-origin: 0 0;
         transform: rotate(-90deg) translate(-100%, -20%);
+        @include desktop {
+            top: -30px;
+        }
     }
     &_title {
         line-height: 1;
@@ -52,16 +55,21 @@
         position: relative;
         margin: 0 0 18px;
         cursor: pointer;
+        min-height: 105px;
+        transform-origin: center;
+        display: inline-block;
         transition: .2s $easing transform;
         @include desktop {
             margin: -35px 50px 0 0;
         }
 
         &:hover {
-            transform: scale(.95);
+            @include desktop {
+                transform: scale(1.05);
+            }
         }
         &:active {
-            transform: scale(1.05);
+            transform: scale(.95);
         }
     }
     &_icon {
@@ -74,9 +82,11 @@
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
         opacity: 0;
         transition: .2s $easing opacity;
+        @include desktop {
+            height: 100%;
+        }
 
         .career_icon-wrapper:hover & {
             opacity: 1;
@@ -136,6 +146,7 @@
 
         &:hover {
             color: $bg_color;
+            transform: scale(1.05);
         }
         &:active {
             transform: scale(.9);
@@ -149,16 +160,10 @@
         left: 0;
         bottom: 0;
         opacity: 0;
-        border-radius: 50%;
-        transform: scale(0);
-        transition: .2s $easing opacity,
-                    .2s $easing border-radius,
-                    .2s $easing transform;
+        transition: .2s $easing opacity;
 
         .career_button:hover & {
             opacity: 1;
-            transform: scale(1);
-            border-radius: 0;
         }
     }
     &_button-text {

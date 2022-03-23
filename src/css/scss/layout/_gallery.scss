@@ -9,9 +9,6 @@
     @include desktop {
         margin-bottom: 160px;
     }
-    @include desktop-large {
-        margin-bottom: 80px;
-    }
 
     &_title-wrapper {
         position: absolute;
@@ -25,6 +22,10 @@
         text-transform: uppercase;
     }
     &_row {
+        @include desktop {
+            overflow: hidden;
+        }
+
         .gallery_more ~ & {
             display: none;
         }
@@ -59,32 +60,63 @@
         }
 
         &::before {
-            content: '— ';
+            content: '';
+            border-bottom: 2px solid $color;
+            width: 22px;
+            vertical-align: middle;
+            display: inline-block;
+            margin: 0 4px 0 0;
+            margin-top: -2px;
+            @include desktop {
+                width: 40px;
+                margin-right: 10px;
+            }
         }
 
         .gallery_row:nth-child(1) & {
             background-image: url(#{$img}/title-bg-1.svg);
             height: 54px;
             line-height: 54px;
+            @include tablet {
+                background-position: center -10px center;
+            }
             @include desktop {
                 height: 94px;
                 line-height: 94px;
+            }
+
+            &::before {
+                @include tablet {
+                    margin-left: -20px;
+                }
+                @include desktop {
+                    margin-left: 0px;
+                }
             }
         }
         .gallery_row:nth-child(2) & {
             background-image: url(#{$img}/title-bg-2.svg);
             height: 74px;
             line-height: 74px;
+            padding-left: 60px;
             @include desktop {
                 height: 93px;
                 line-height: 93px;
                 margin-top: 0;
+            }
+
+            &::before {
+                @include desktop {
+                    margin-left: 80px;
+                }
             }
         }
         .gallery_row:nth-child(3) & {
             background-image: url(#{$img}/title-bg-3.svg);
             height: 95px;
             line-height: 95px;
+            margin-top: 45px;
+            padding-left: 80px;
             @include desktop {
                 height: 100px;
                 line-height: 100px;
@@ -93,14 +125,35 @@
             @include desktop-large {
                 margin-top: 90px;
             }
+
+            &::before {
+                @include tablet {
+                    margin-left: 80px;
+                }
+                @include desktop {
+                    margin-left: 220px;
+                }
+            }
         }
         .gallery_row:nth-child(4) & {
             background-image: url(#{$img}/title-bg-4.svg);
             height: 54px;
             line-height: 54px;
+            padding-left: 74px;
             @include desktop {
                 height: 72px;
                 line-height: 72px;
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            &::before {
+                @include tablet {
+                    margin-left: -40px;
+                }
+                @include desktop {
+                    margin-left: 0px;
+                }
             }
         }
         .gallery_row:nth-child(5) & {
@@ -111,6 +164,15 @@
                 height: 92px;
                 line-height: 92px;
                 margin-top: 70px;
+            }
+
+            &::before {
+                @include tablet {
+                    margin-left: 120px;
+                }
+                @include desktop {
+                    margin-left: 240px;
+                }
             }
         }
     }

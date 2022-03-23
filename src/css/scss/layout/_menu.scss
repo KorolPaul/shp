@@ -50,7 +50,21 @@
                 left: 0;
                 width: 100%;
                 border-bottom: 2px solid currentColor;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: .4s $easeInOutCirc transform .15s;
             }
+        }
+        @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+                &::after {
+                    transition-delay: #{$i * 0.1}s;
+                }
+            }
+        }
+
+        .menu-opened &::after {
+            transform: scaleX(1);
         }
     }
     &_link-text {

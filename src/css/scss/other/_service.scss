@@ -11,7 +11,7 @@
                     .8s $easeOutCirc opacity;
     }
 
-    .services_holder.animated & {
+    &.animated {
         transform: translateY(0);
         opacity: 1;
     }
@@ -36,7 +36,8 @@
         opacity: 0;
         transition: .2s $easing opacity .1s;
 
-        .service:hover & {
+        .service:hover &,
+        .service.active & {
             opacity: 1;
             transition-duration: 0s;
             transition-delay: 0s;
@@ -100,13 +101,14 @@
     &_text-line {
         display: block;
         opacity: 0;
-        transform: translateY(50px);
-        transition: .1s $easeInOutCirc opacity .1s,
-                    .1s $easeInOutCirc transform .1s;
+        transform: translateX(-75%);
+        transition: .1s $easeInCirc opacity .1s,
+                    .3s $easeInCirc transform .1s;
 
         
-        .service:hover & {
-            transform: translateY(0);
+        .service:hover &,
+        .service.active & {
+            transform: translateX(0);
             opacity: 1;
         }
         @for $i from 1 through 10 {
@@ -169,14 +171,26 @@
             }
         }
     }
-    &:hover li::after {
+    &:hover li::after,
+    &.active li::after {
         transform: scaleX(1);
     }
-    &:hover li::before {
+    &:hover li::before,
+    &.active li::before {
         transform: scaleX(1);
     }
     
-    .services_holder.animated &:hover {
+    &_bg-border {
+        fill: transparent;
+        transition: .2s ease-in-out fill .2s;
+
+        .service:hover &,
+        .service.active & {
+            transition-delay: 0s;
+        }
+    }
+    &.animated:hover,
+    &.active {
         .service_bg-border {
             fill: $cRed;
         }
@@ -185,14 +199,6 @@
         }
         .service_bg-border__purple {
             fill: $cPurple;
-        }
-    }
-    &_bg-border {
-        fill: transparent;
-        transition: .2s ease-in-out fill .2s;
-
-        .service:hover & {
-            transition-delay: 0s;
         }
     }
 }
