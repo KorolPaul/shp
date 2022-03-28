@@ -74,11 +74,22 @@
 
         strong {
             display: block;
+            @include desktop {
+                margin-bottom: 4px;
+            }
         }
     }
 
     a {
         color: $bg_color;
+        transition: .2s $easing opacity;
         text-decoration: underline;
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
+        }
     }
 }

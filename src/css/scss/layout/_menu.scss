@@ -52,7 +52,7 @@
                 border-bottom: 2px solid currentColor;
                 transform: scaleX(0);
                 transform-origin: left center;
-                transition: .4s $easeInOutCirc transform .15s;
+                transition: 0s  $easeInOutCirc transform .15s;
             }
         }
         @for $i from 1 through 10 {
@@ -65,17 +65,18 @@
 
         .menu-opened &::after {
             transform: scaleX(1);
+            transition-duration: .4s;
         }
     }
     &_link-text {
         display: block;
         opacity: 0;
-        transform: translateY(50px);
-        transition: .1s $easeInOutCirc opacity .15s,
-                    .1s $easeInOutCirc transform .15s;
+        transform: translateX(-100%);
+        transition: 0s $easeInOutCirc opacity .15s,
+                    0s $easeInOutCirc transform .15s;
 
         .menu-opened & {
-            transform: translateY(0);
+            transform: translateX(0);
             opacity: 1;
             transition-duration: .2s;
         }

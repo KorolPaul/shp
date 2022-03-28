@@ -3,5 +3,13 @@
         display: inline-block;
         margin: 0 0 0 4px;
         text-decoration: none;
+        transition: .2s $easing opacity;
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
+        }
     }
 }

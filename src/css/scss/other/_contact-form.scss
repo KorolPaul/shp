@@ -104,7 +104,7 @@
         color: $cBlue;
         transition: .2s $easing background,
                     .2s $easing color,
-                    .2s $easing opacity
+                    .2s $easing opacity,
                     .2s $easing transform;
 
         &:hover {

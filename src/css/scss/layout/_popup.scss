@@ -1,5 +1,5 @@
 .popup {
-    background: $bg_color url(#{$img}/bg.jpg) repeat;
+    background: #000;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,7 +10,7 @@
     z-index: 10;
     pointer-events: none;
     opacity: 0;
-    transform: scale(1.2);
+    transform: translateY(50%);
     transition: .3s $easing transform,
                 .3s $easing opacity;
     @include desktop {
@@ -19,7 +19,7 @@
 
     &.opened {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0%);
         pointer-events: all;
     }
 
