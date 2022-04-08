@@ -19,7 +19,7 @@
         width: auto;
     }
     @include desktop {
-        padding-right: 150px;
+        min-width: 500px;
     }
 
     .menu-opened & {
@@ -28,18 +28,27 @@
 
     &_link {
         display: block;
+        width: 100%;
         font-size: 28px;
         color: $bg_color;
-        margin: 10px 0;
+        padding: 10px 0;
         font-family: $font-family__monument;
         text-transform: uppercase;
         overflow: hidden;
         position: relative;
         text-decoration: underline;
+        transition: .2s $easing opacity;
         @include tablet {
             white-space: nowrap;
-            margin: 15px 0;
+            padding: 15px 0 20px;
             text-decoration: none;
+        }
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
         }
 
         &::after {
@@ -49,43 +58,42 @@
                 bottom: 7px;
                 left: 0;
                 width: 100%;
-                border-bottom: 2px solid currentColor;
-                transform: scaleX(0);
-                transform-origin: left center;
-                transition: 0s  $easeInOutCirc transform .15s;
+                border-bottom: 2px solid rgba($bg_color, .5);
+                //transform: scaleX(0);
+                //transform-origin: left center;
+                //transition: 0s  $easeInOutCirc transform .15s;
             }
         }
-        @for $i from 1 through 10 {
-            &:nth-child(#{$i}) {
-                &::after {
-                    transition-delay: #{$i * 0.1}s;
-                }
-            }
-        }
+        //@for $i from 1 through 10 {
+        //    &:nth-child(#{$i}) {
+        //        &::after {
+        //            transition-delay: #{$i * 0.1}s;
+        //        }
+        //    }
+        //}
 
-        .menu-opened &::after {
-            transform: scaleX(1);
-            transition-duration: .4s;
-        }
+        //.menu-opened &::after {
+        //    transform: scaleX(1);
+        //    transition-duration: .4s;
+        //}
     }
     &_link-text {
         display: block;
-        opacity: 0;
-        transform: translateX(-100%);
+        //opacity: 0;
+        //transform: translateX(-100%);
         transition: 0s $easeInOutCirc opacity .15s,
                     0s $easeInOutCirc transform .15s;
 
-        .menu-opened & {
-            transform: translateX(0);
-            opacity: 1;
-            transition-duration: .2s;
-        }
-
-        @for $i from 1 through 10 {
-            .menu_link:nth-child(#{$i}) & {
-                transition-delay: #{$i * 0.12}s;
-            }
-        }
+        //.menu-opened & {
+        //    transform: translateX(0);
+        //    opacity: 1;
+        //    transition-duration: .2s;
+        //}
+        //@for $i from 1 through 10 {
+        //    .menu_link:nth-child(#{$i}) & {
+        //        transition-delay: #{$i * 0.12}s;
+        //    }
+        //}
     }
     &_char {
         @include tablet {
@@ -131,7 +139,7 @@
         transform: scale(1.1);
     }
     &:active {
-        transform: scale(.9);
+        transform: scale(.95);
     }
 
     .menu-opened & {

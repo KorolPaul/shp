@@ -5,7 +5,7 @@
                 .5s linear transform;
 
     &:hover {
-        filter: brightness(4);
+        filter: brightness(4) grayscale(1);
         transform: rotate(360deg);
         transition: .2s $easing filter,
                     5s linear transform;

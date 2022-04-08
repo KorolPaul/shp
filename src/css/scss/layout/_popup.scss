@@ -11,8 +11,8 @@
     pointer-events: none;
     opacity: 0;
     transform: translateY(50%);
-    transition: .3s $easing transform,
-                .3s $easing opacity;
+    transition: .3s $easingSmooth transform,
+                .3s $easingSmooth opacity;
     @include desktop {
         padding: 64px;
     }

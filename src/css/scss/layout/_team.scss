@@ -91,6 +91,7 @@
     &_member-description {
         font-size: 14px;
         line-height: 18px;
+        word-break: initial;
         @include desktop {
             font-size: 20px;
             line-height: 24px;

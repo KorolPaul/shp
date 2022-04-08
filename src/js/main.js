@@ -1,4 +1,5 @@
 const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
 
 // sliders
 const gallerySliders = document.querySelectorAll('.js-slider-gallery');
@@ -46,7 +47,7 @@ const careersSlider = tns({
 const teamSlider = tns({
     container: '.js-slider-team',
     items: 2,
-    slideBy: 'page',
+    slideBy: 1,
     autoplay: false,
     nav: false,
     controls: false,
@@ -68,33 +69,41 @@ const teamSlider = tns({
 
 const teamCarouselWrapper = document.querySelector('.team');
 if (teamCarouselWrapper) {
-    teamCarouselWrapper.addEventListener('mouseenter', () => {
-        window.addEventListener(wheelEvent, handleCarouselScroll, { passive: false });
-    });
-    teamCarouselWrapper.addEventListener('mouseleave', () => {
-        window.removeEventListener(wheelEvent, handleCarouselScroll);
-    });
-}
+    function handleCarouselScroll(isForward) {
+        const { slideCount, index } = teamSlider.getInfo();
+        if (isForward) {
+            if (index >= slideCount) {
+                return;
+            }
 
-function handleCarouselScroll(e) {
-    const { slideBy, index } = teamSlider.getInfo();
-
-    if (e.deltaY > 0) {
-        if (index >= slideBy) {
-            return;
+            teamSlider.goTo('next');
+        } else {
+            if (index === 0) {
+                return;
+            }
+            teamSlider.goTo('prev');
         }
-
-        teamSlider.goTo('next');
-        e.preventDefault();
-
-    } else {
-        if (index === 0) {
-            return;
-        }
-        teamSlider.goTo('prev');
-        e.preventDefault();
-
     }
+
+    let lastRatio = null
+    const observerCallback = function (e) {
+        const { boundingClientRect } = e[0];
+        const ratio = boundingClientRect.height - boundingClientRect.y;
+
+        if (ratio > 0) {
+            handleCarouselScroll(ratio > lastRatio)
+        }
+        console.log(ratio);
+        lastRatio = ratio
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+        rootMargin: '0px 0px -25% 0px',
+        threshold: thresholdSteps,
+        //root: document.body
+    });
+    console.log(teamCarouselWrapper);
+    observer.observe(teamCarouselWrapper);
 }
 
 // menu
@@ -176,7 +185,7 @@ if (cookiesBanner && !hasCookies) {
 
 /* appaerance animation */
 const animatedElements = document.querySelectorAll('.js-animation');
-const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
+
 
 if (animatedElements.length) {
     const isMobile = screen.width <= 768
@@ -265,22 +274,25 @@ if (fileUploadElement) {
 
 // glow mask
 const maskHolderElements = document.querySelectorAll('.js-mask-holder');
-maskHolderElements.forEach(maskHolderElement => maskHolderElement.addEventListener('mousemove', (e) => {
-    animatedElements.forEach(el => {
-        const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px 0px -25% 0px',
-            threshold: thresholdSteps,
-            //root: document.body
-        });
-        observer.observe(el);
-    })
+maskHolderElements.forEach(el => {
+    const observerCallback = function (e) {
+        const { boundingClientRect } = e[0];
+        const ratio = boundingClientRect.height -  boundingClientRect.y;
+
+        const maskElement = el.querySelector('.js-mask');
+        maskElement.style.left = `${ratio}px`
+        maskElement.style.top = `${ratio}px`
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+        rootMargin: '0px 0px -25% 0px',
+        threshold: thresholdSteps,
+        //root: document.body
+    });
+    observer.observe(el);
 
 
-    // const { clientX: x, clientY: y } = e;
-    // const maskElement = maskHolderElement.querySelector('.js-mask');
-    // maskElement.style.left = `${x}px`
-    // maskElement.style.top = `${y}px`
-}, false));
+});
 // form inputs
 const contentEditableSpans = document.querySelectorAll('span[contenteditable]');
 contentEditableSpans.forEach(el => el.addEventListener('click', (e) => {
@@ -326,3 +338,22 @@ connectFormButtonElement.addEventListener('click', (e) => {
     e.currentTarget.classList.add('active');
     e.currentTarget.blur();
 });
+
+
+// about title animation 
+// const aboutTitleLineElements = document.querySelectorAll('.about_title-text');
+// aboutTitleLineElements.forEach(el => {
+//     el.childNodes.forEach(node => {
+//         if (node.nodeType === 3) {
+//             const text = node.textContent;
+//             console.log(text, text.length);
+//             if (text) {
+//                 node.textContent = '';
+//                 const span = document.createElement('span');
+//                 span.innerText = text.replaceAll(' ', '\xa0');
+//                 node.parentElement.insertBefore(span, node);
+//             }
+//         }
+//     })
+//     el.classList.add('animated')
+// })
