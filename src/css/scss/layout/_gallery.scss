@@ -74,7 +74,6 @@
         }
 
         .gallery_row:nth-child(1) & {
-            background-image: url(#{$img}/title-bg-1.svg);
             height: 54px;
             line-height: 54px;
             @include tablet {
@@ -95,7 +94,6 @@
             }
         }
         .gallery_row:nth-child(2) & {
-            background-image: url(#{$img}/title-bg-2.svg);
             height: 74px;
             line-height: 74px;
             padding-left: 60px;
@@ -112,11 +110,10 @@
             }
         }
         .gallery_row:nth-child(3) & {
-            background-image: url(#{$img}/title-bg-3.svg);
             height: 95px;
             line-height: 95px;
             margin-top: 45px;
-            padding-left: 80px;
+            padding-left: 60px;
             @include desktop {
                 height: 100px;
                 line-height: 100px;
@@ -136,7 +133,6 @@
             }
         }
         .gallery_row:nth-child(4) & {
-            background-image: url(#{$img}/title-bg-4.svg);
             height: 54px;
             line-height: 54px;
             padding-left: 74px;
@@ -157,9 +153,9 @@
             }
         }
         .gallery_row:nth-child(5) & {
-            background-image: url(#{$img}/title-bg-5.svg);
             height: 54px;
             line-height: 54px;
+            padding-left: 0;
             @include desktop {
                 height: 92px;
                 line-height: 92px;
@@ -168,10 +164,10 @@
 
             &::before {
                 @include tablet {
-                    margin-left: 120px;
+                    margin-left: 20px;
                 }
                 @include desktop {
-                    margin-left: 240px;
+                    margin-left: 50px;
                 }
             }
         }

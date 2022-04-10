@@ -1,5 +1,6 @@
 const wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 const thresholdSteps = [...Array(10).keys()].map(i => i / 10);
+const isMobile = screen.width <= 768
 
 // sliders
 const gallerySliders = document.querySelectorAll('.js-slider-gallery');
@@ -93,7 +94,6 @@ if (teamCarouselWrapper) {
         if (ratio > 0) {
             handleCarouselScroll(ratio > lastRatio)
         }
-        console.log(ratio);
         lastRatio = ratio
     };
 
@@ -102,7 +102,6 @@ if (teamCarouselWrapper) {
         threshold: thresholdSteps,
         //root: document.body
     });
-    console.log(teamCarouselWrapper);
     observer.observe(teamCarouselWrapper);
 }
 
@@ -127,11 +126,32 @@ if (fadeMobileElement) {
     fadeMobileElement.addEventListener('click', closeAllOpened);
 }
 
+const menuLinkElements = document.querySelectorAll('.menu_link');
+menuLinkElements.forEach(el => el.addEventListener('click', () => document.body.classList.toggle('menu-opened')));
+
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
 function disableScroll(e) {
-    if (e.target.className !== 'popup_content' && !e.target.className.includes('contact-form')) {
+    console.log(e.originalTarget.className);
+    const { target } = e
+    let isInPopup = false;
+    
+    function findParentPopup(el) {
+        if (!el.parentElement) {
+            return
+        }
+        if (el.className.includes('popup_content')) {
+            isInPopup = true
+            return
+        }
+
+        findParentPopup(el.parentElement)
+    }
+
+    findParentPopup(target.parentElement)
+    
+    if (!isInPopup && !target.className.includes('contact-form')) {
         e.preventDefault();
     }
 }
@@ -188,7 +208,6 @@ const animatedElements = document.querySelectorAll('.js-animation');
 
 
 if (animatedElements.length) {
-    const isMobile = screen.width <= 768
     const ratio = isMobile ? 0.2 : 0.5
     const observerCallback = function (e) {
         const { target, intersectionRatio } = e[0];
@@ -235,6 +254,7 @@ if (moreButtonElement) {
     moreButtonElement.addEventListener('click', (e) => {
         moreButtonElement.parentNode.remove(moreButtonElement);
     }, false)
+
 }
 
 // textarea
@@ -246,6 +266,7 @@ if (textareaElement) {
 function resizeTextarea (e) {
     this.prevHeight = parseInt(e.target.style.height) || 0;
     const { scrollHeight } = e.target;
+
     if (scrollHeight > 70) {
         e.target.classList.add('expanded');
         if (scrollHeight > this.prevHeight) {
@@ -277,7 +298,7 @@ const maskHolderElements = document.querySelectorAll('.js-mask-holder');
 maskHolderElements.forEach(el => {
     const observerCallback = function (e) {
         const { boundingClientRect } = e[0];
-        const ratio = boundingClientRect.height -  boundingClientRect.y;
+        const ratio = boundingClientRect.height - boundingClientRect.y;
 
         const maskElement = el.querySelector('.js-mask');
         maskElement.style.left = `${ratio}px`
@@ -314,13 +335,18 @@ contentEditableSpans.forEach(el => el.addEventListener('keydown', (e) => {
     }
 }))
 
-const formButtonElements = document.querySelectorAll('.js-send-form');
-formButtonElements.forEach(el => el.addEventListener('click', (e) => {
-    e.preventDefault();
-    e.target.parentNode.classList.add('done');
-    
-    // FORM SUBMIT HANDLER MUST BE HERE
-}))
+
+
+
+
+//
+// const formButtonElements = document.querySelectorAll('.js-send-form');
+// formButtonElements.forEach(el => el.addEventListener('click', (e) => {
+//     e.preventDefault();
+//         e.target.parentNode.classList.add('done');
+//     // FORM SUBMIT HANDLER MUST BE HERE
+// }))
+
 
 // what we do 
 const serviceElements = document.querySelectorAll('.service');
@@ -331,29 +357,30 @@ serviceElements.forEach(el => el.addEventListener('touchstart', (e) => {
 
 
 // connect form
-const connectFormButtonElement = document.querySelector('.js-connect-button');
-connectFormButtonElement.addEventListener('click', (e) => {
-    e.preventDefault();
-    // connect form handler
-    e.currentTarget.classList.add('active');
-    e.currentTarget.blur();
-});
-
+// const connectFormButtonElement = document.querySelector('.js-connect-button');
+// connectFormButtonElement.addEventListener('click', (e) => {
+//     e.preventDefault();
+//
+//     // connect form handler
+//     e.currentTarget.classList.add('active');
+//     e.currentTarget.blur();
+// });
 
 // about title animation 
-// const aboutTitleLineElements = document.querySelectorAll('.about_title-text');
-// aboutTitleLineElements.forEach(el => {
-//     el.childNodes.forEach(node => {
-//         if (node.nodeType === 3) {
-//             const text = node.textContent;
-//             console.log(text, text.length);
-//             if (text) {
-//                 node.textContent = '';
-//                 const span = document.createElement('span');
-//                 span.innerText = text.replaceAll(' ', '\xa0');
-//                 node.parentElement.insertBefore(span, node);
-//             }
-//         }
-//     })
-//     el.classList.add('animated')
-// })
+const aboutTitleLineElements = document.querySelectorAll('.about_title-text');
+if (!isMobile) {
+    aboutTitleLineElements.forEach(el => {
+        el.childNodes.forEach(node => {
+            if (node.nodeType === 3) {
+                const text = node.textContent;
+                if (text) {
+                    node.textContent = '';
+                    const span = document.createElement('span');
+                    span.innerText = text.replaceAll(' ', '\xa0');
+                    node.parentElement.insertBefore(span, node);
+                }
+            }
+        })
+        el.classList.add('animated')
+    })
+}

@@ -53,6 +53,9 @@
     }
     &_subcolumn {
         margin-bottom: 36px;
+        @include desktop-large {
+            width: calc(50% - 22px);
+        }
 
         div {
             @include desktop {

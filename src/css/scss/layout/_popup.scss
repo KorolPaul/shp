@@ -51,10 +51,13 @@
         height: 100%;
         max-width: 910px;
         margin: auto;
-        @include tablet {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+
+        &__center {
+            @include tablet {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
         }
     }
 
