@@ -34,14 +34,18 @@
         padding: 10px 0;
         font-family: $font-family__monument;
         text-transform: uppercase;
-        overflow: hidden;
         position: relative;
         text-decoration: underline;
         transition: .2s $easing opacity;
+        font-weight: 700;
         @include tablet {
             white-space: nowrap;
             padding: 15px 0 20px;
             text-decoration: none;
+        }
+
+        &:nth-child(even) {
+            font-weight: 400;
         }
 
         &:hover {
@@ -56,6 +60,19 @@
                 content: '';
                 position: absolute;
                 bottom: 7px;
+                left: 0;
+                width: 100%;
+                border-bottom: 2px solid rgba($bg_color, .5);
+                //transform: scaleX(0);
+                //transform-origin: left center;
+                //transition: 0s  $easeInOutCirc transform .15s;
+            }
+        }
+        &:first-child::before {
+            @include tablet {
+                content: '';
+                position: absolute;
+                top: -7px;
                 left: 0;
                 width: 100%;
                 border-bottom: 2px solid rgba($bg_color, .5);
@@ -133,6 +150,10 @@
         height: 56px;
         width: 56px;
         margin-left: 24px;
+    }
+    @include desktop-large {
+        height: 4.18vw;
+        width: 4.18vw;
     }
 
     &:hover {

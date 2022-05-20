@@ -65,17 +65,20 @@
 
         &:hover {
             @include desktop {
-                transform: scale(1.05);
+                transform: scale(1.02);
             }
         }
         &:active {
-            transform: scale(.95);
+            transform: scale(.98);
         }
     }
     &_icon {
         display: block;
         @include desktop {
             width: 154px;
+        }
+        @include desktop-large {
+            width: 11.4vw;
         }
     }
     &_icon-filled {
@@ -105,8 +108,8 @@
         }
         @include desktop-large {
             margin: 0;
-            font-size: 32px;
-            line-height: 40px;
+            font-size: 2.3vw;
+            line-height: 1.25;
         }
     }
     &_description {
@@ -121,6 +124,7 @@
         }
         @include desktop-large {
             margin-right: 35px;
+            font-size: 1.5vw
         }
     }
     &_button {
@@ -141,15 +145,15 @@
             min-width: 140px;
         }
         @include desktop-large {
-            min-width: 180px;
+            min-width: 12.3vw;
         }
 
         &:hover {
             color: $bg_color;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         &:active {
-            transform: scale(.95);
+            transform: scale(.98);
         }
     }
     &_button-bg {

@@ -33,19 +33,24 @@
         }
     }
     &_menu {
-        @include desktop {
+        @include desktop-large {
             display: flex;
             gap: 72px;
         }
     }
     &_column {
         @include desktop-large {
+            width: 50%;
+        }
+        @include media(1500px) {
             display: flex;
             justify-content: space-between;
             gap: 44px;
+            width: auto;
         }
 
         &:last-child {
+            width: auto;
             @include tablet {
                 flex-shrink: 0;
             }
@@ -53,7 +58,7 @@
     }
     &_subcolumn {
         margin-bottom: 36px;
-        @include desktop-large {
+        @include media(1500px) {
             width: calc(50% - 22px);
         }
 

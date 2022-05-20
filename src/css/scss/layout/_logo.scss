@@ -6,7 +6,7 @@
 
     &:hover {
         filter: brightness(4) grayscale(1);
-        transform: rotate(360deg);
+        //transform: rotate(360deg);
         transition: .2s $easing filter,
                     5s linear transform;
     }
@@ -16,6 +16,9 @@
         transition: .5s linear transform;
         @include desktop {
             width: 74px;
+        }
+        @include desktop-large {
+            width: 5.4vw;
         }
 
         .logo:hover & {

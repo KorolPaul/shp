@@ -51,10 +51,10 @@
         &:hover {
             background-color: $bg_color;
             color: $color;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
         &:active {
-            transform: scale(.95);
+            transform: scale(.98);
         }
     }
 }

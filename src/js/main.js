@@ -89,7 +89,7 @@ if (teamCarouselWrapper) {
     let lastRatio = null
     const observerCallback = function (e) {
         const { boundingClientRect } = e[0];
-        const ratio = boundingClientRect.height - boundingClientRect.y;
+        const ratio = boundingClientRect.height / 2 - boundingClientRect.y;
 
         if (ratio > 0) {
             handleCarouselScroll(ratio > lastRatio)
@@ -98,9 +98,9 @@ if (teamCarouselWrapper) {
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-        rootMargin: '0px 0px -25% 0px',
+        rootMargin: '0px 0px -40% 0px',
         threshold: thresholdSteps,
-        //root: document.body
+        root: null
     });
     observer.observe(teamCarouselWrapper);
 }
@@ -221,7 +221,7 @@ if (animatedElements.length) {
 
     animatedElements.forEach(el => {
         const observer = new IntersectionObserver(observerCallback, {
-            rootMargin: '0px 0px -25% 0px',
+            rootMargin: '0px 0px -15% 0px',
             threshold: thresholdSteps,
             //root: document.body
         });

@@ -62,7 +62,7 @@
         transform-origin: center;
         z-index: 1;
         box-sizing: border-box;
-        width: 160px;
+        min-width: 160px;
         transform: scale(.7) translate(-50%, -50%);
         transition: .2s $easeInOutCirc opacity,
                     .2s $easeInOutCirc transform,
@@ -117,8 +117,8 @@
             margin-right: -$side-indent__desktop;
         }
         @include desktop-large {
-            margin-left: calc(-50vw - 22px + $max-width / 2 - 170px);
-            margin-right: calc(-50vw - 22px + $max-width / 2 + $side-indent__desktop / 2);
+            margin-left: calc(-50vw - 22px + $max-width__desktop-large / 2 - 170px);
+            margin-right: calc(-50vw - 22px + $max-width__desktop-large / 2 + $side-indent__desktop / 2);
         }
     }
 

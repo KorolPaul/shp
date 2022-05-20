@@ -26,6 +26,10 @@ a {
     &.active {
         outline: none;
     }
+
+    &[href^='tel'] {
+        white-space: nowrap;
+    }
 }
 
 p {

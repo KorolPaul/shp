@@ -75,7 +75,7 @@
         align-items: center;
 
         &__duplicate {
-            animation-name: row-slide-duplicate;
+            animation: row-slide-duplicate 25s linear infinite;
         }
 
         .partners_row:nth-of-type(2) & {
@@ -106,10 +106,10 @@
         transform: translate(0);
     }
     50% {
-        transform: translate(calc(-6 * 240px));
+        transform: translate(-100%);
     }
     50.01% {
-        transform: translate(calc(6 * 240px));
+        transform: translate(100%);
     }
     100% {
         transform: translate(0);
@@ -120,6 +120,6 @@
         transform: translate(0);
     }
     100% {
-        transform: translate(calc(-12 * 240px));
+        transform: translate(-200%);
     }
 }

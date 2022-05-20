@@ -46,11 +46,13 @@
         padding-left: $side-indent__tablet;
         padding-right: $side-indent__tablet;
     }
-    @include desktop() {
+    @include desktop {
         padding-left: $side-indent__desktop;
         padding-right: $side-indent__desktop;
     }
-
+    @include desktop-large() {
+        max-width: $max-width__desktop-large;
+    }
 }
 
 @mixin gradiented-text($color1, $color2, $degree: 65deg) {

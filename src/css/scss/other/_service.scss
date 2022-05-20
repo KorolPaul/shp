@@ -1,3 +1,5 @@
+$lineEasing: cubic-bezier(.25, .1, .25, 1);
+
 .service {
     position: relative;
     display: inline-block;
@@ -63,7 +65,10 @@
         transition: .2s $easeInOutCirc opacity .2s;
         @include desktop {
             font-size: 20px;
-            line-height: 24px;
+            line-height: 1.2;
+        }
+        @include desktop-large {
+            font-size: 1.4vw;
         }
 
         .service:hover & {
@@ -92,7 +97,7 @@
             color: $cPurple;
             top: 75%;
             left: 45%;
-            width: 70%;
+            width: 66%;
             @include desktop {
                 left: 55%;
             }
@@ -102,8 +107,8 @@
         display: block;
         opacity: 0;
         transform: translateX(-75%);
-        transition: .1s $easing opacity .1s,
-                    .3s $easing transform .1s;
+        transition: .1s $lineEasing opacity .1s,
+                    .3s $lineEasing transform .1s;
 
         
         .service:hover &,
@@ -152,7 +157,7 @@
             border-bottom: 1px solid currentColor;
             transform-origin: left center;
             transform: scaleX(0);
-            transition: .2s $easing transform;
+            transition: .2s $lineEasing transform;
         }
         &:first-child::before {
             content: '';
@@ -163,7 +168,7 @@
             border-bottom: 1px solid currentColor;
             transform-origin: left center;
             transform: scaleX(0);
-            transition: .2s $easing transform;
+            transition: .2s $lineEasing transform;
         }
         @for $i from 1 through 10 {
             &:nth-child(#{$i})::after {

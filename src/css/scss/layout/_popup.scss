@@ -10,7 +10,7 @@
     z-index: 10;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(30%);
     transition: .3s $easingSmooth transform,
                 .3s $easingSmooth opacity;
     @include desktop {

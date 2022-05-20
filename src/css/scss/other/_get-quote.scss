@@ -1,26 +1,39 @@
 .get-quote {
     @include button-reset;
     background: url(#{$img}/get-quote.svg) no-repeat center / 100% 100%;
-    font-size: 20px;
+    font-size: 14px;
     color: $cRed;
     font-weight: 400;
     position: relative;
     z-index: 1;
-    height: 48px;
-    width: 150px;
+    height: 40px;
+    width: 130px;
     transition: .2s $easing color,
                 .1s $easing transform;
+    @include media(420px) {
+        height: 48px;
+        width: 150px;
+        font-size: 18px;
+    }
+    @include tablet {
+        font-size: 20px;
+    }
     @include desktop {
         height: 56px;
         width: 174px;
     }
+    @include desktop-large {
+        height: 4.18vw;
+        width: 13vw;
+        font-size: 1.5vw;
+    }
 
     &:hover {
         color: $bg_color;
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
     &:active {
-        transform: scale(.95);
+        transform: scale(.98);
     }
 
     &_filled-bg {
