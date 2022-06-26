@@ -113,7 +113,6 @@ if (teamCarouselWrapper) {
         } else {
             document.removeEventListener(wheelEvent, preventScroll, { passive: false })
         }
-        lastRatio = ratio
     };
 
     const observer = new IntersectionObserver(observerCallback, {
