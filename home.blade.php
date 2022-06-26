@@ -19,13 +19,18 @@
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}"/>
     <meta content="telephone=no" name="format-detection">
     <meta name="HandheldFriendly" content="true">
+    <meta property="og:title" content="SHP - B2B event production agency" />
+    <meta property="og:description" content="We specialize in creating events, launching new products, and creating a buzz around your brand" />
+    <meta property="og:url" content="https://shp.agency/" />
+    <meta property="og:image" content="https://shp.agency/storage/app/uploads/social.png" />
+    <meta property="og:type" content="article" />
 </head>
 <body >
 <div  id="headers"></div>
 <header id="headers" class="header">
     <a class="logo " href="#headers" >
         @if($genereallogo)
-        <img class="logo_image" src="{{asset('uploads/header/'.$genereallogo)}}" alt="logo_image">
+        <img class="logo_image" src="{{asset('storage/app/uploads/header/'.$genereallogo)}}" alt="logo_image">
         @endif
     </a>
 
@@ -67,8 +72,9 @@
 </header>
 
 <main >
+  
     @if($canvasphoto)
-    <div class="particles js-particles" data-image="{{asset('uploads/header/'.$canvasphoto)}}">
+    <div class="particles js-particles" data-image=" {{asset('storage/app/uploads/header/'.$canvasphoto)}} ">
     </div>
     @endif
     <div class="content">
@@ -335,7 +341,7 @@
                 <div class="partners_carousel">
                     @foreach($partner1 as $partners)
                     <a target="_blank" href="{{$partners->url}}" class="partners_item">
-                        <img class="partners_image" src="{{asset('uploads/partner/'.$partners->logo)}}" alt="">
+                        <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners->logo)}}" alt="">
                     </a>
                     @endforeach
                 </div>
@@ -344,7 +350,7 @@
                 @foreach($partner1 as $partners_dup)
 
                 <a target="_blank" href="{{$partners_dup->url}}" class="partners_item">
-                        <img class="partners_image" src="{{asset('uploads/partner/'.$partners_dup->logo)}}" alt="">
+                        <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners_dup->logo)}}" alt="">
                 </a>
                 @endforeach
 
@@ -356,7 +362,7 @@
             <div class="partners_carousel">
                 @foreach($partner2 as $partners)
                 <a target="_blank" href="{{$partners->url}}" class="partners_item">
-                    <img class="partners_image" src="{{asset('uploads/partner/'.$partners->logo)}}" alt="">
+                    <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners->logo)}}" alt="">
                 </a>
                 @endforeach
             </div>
@@ -364,7 +370,7 @@
             <div class="partners_carousel partners_carousel__duplicate">
                 @foreach($partner2 as $partners)
                 <a target="_blank" href="{{$partners->url}}" class="partners_item">
-                    <img class="partners_image" src="{{asset('uploads/partner/'.$partners->logo)}}" alt="">
+                    <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners->logo)}}" alt="">
                 </a>
                 @endforeach
             </div>
@@ -373,7 +379,7 @@
             <div class="partners_carousel">
                 @foreach($partner3 as $partners)
                 <a target="_blank" href="{{$partners->url}}" class="partners_item">
-                    <img class="partners_image" src="{{asset('uploads/partner/'.$partners->logo)}}" alt="">
+                    <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners->logo)}}" alt="">
                 </a>
                 @endforeach
             </div>
@@ -381,7 +387,7 @@
             <div class="partners_carousel partners_carousel__duplicate">
                 @foreach($partner3 as $partners)
                 <a target="_blank" href="{{$partners->url}}" class="partners_item">
-                        <img class="partners_image" src="{{asset('uploads/partner/'.$partners->logo)}}" alt="">
+                        <img class="partners_image" src="{{asset('storage/app/uploads/partner/'.$partners->logo)}}" alt="">
 
                 </a>
                 @endforeach
@@ -407,7 +413,7 @@
                 @foreach($event as $events)
 {{--                    <style>--}}
 {{--                        .gallery_row .gallery_subtitle {--}}
-{{--                            --}}{{--background-image: url({{asset('uploads/event/'.$events->icon)}});--}}
+{{--                            --}}{{--background-image: url({{asset('storage/app/uploads/event/'.$events->icon)}});--}}
 {{--                            height: 74px;--}}
 {{--                            line-height: 74px;--}}
 {{--                            padding-left: 60px;--}}
@@ -416,20 +422,20 @@
                 @if($events->photo4 != NULL)
                 <div class="gallery_row">
 
-                    <h4 class="gallery_subtitle js-animation"  style="   background-image:  url({{asset('uploads/event/'.$events->icon)}});">{{$events->title}}</h4>
+                    <h4 class="gallery_subtitle js-animation"  style="   background-image:  url({{asset('storage/app/uploads/event/'.$events->icon)}});">{{$events->title}}</h4>
 
                         <div class="gallery_items gallery_items__pattern-1 js-slider-gallery">
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo1)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo1)}}" alt="" class="gallery_image js-animation">
                         </div>
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo2)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo2)}}" alt="" class="gallery_image js-animation">
                         </div>
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo3)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo3)}}" alt="" class="gallery_image js-animation">
                         </div>
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo4)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo4)}}" alt="" class="gallery_image js-animation">
                         </div>
                     </div>
                 </div>
@@ -437,19 +443,19 @@
 
                 <div class="gallery_row">
 
-                    <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('uploads/event/'.$events->icon)}});">{{$events->title}}</h4>
+                    <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('storage/app/uploads/event/'.$events->icon)}});">{{$events->title}}</h4>
 
                         <div class="gallery_items gallery_items__pattern-2 js-slider-gallery">
 
 
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo1)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo1)}}" alt="" class="gallery_image js-animation">
                         </div>
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo2)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo2)}}" alt="" class="gallery_image js-animation">
                         </div>
                         <div class="gallery_item">
-                            <img src="{{asset('uploads/event/'.$events->photo3)}}" alt="" class="gallery_image js-animation">
+                            <img src="{{asset('storage/app/uploads/event/'.$events->photo3)}}" alt="" class="gallery_image js-animation">
                         </div>
                     </div>
 
@@ -468,38 +474,38 @@
                         @if($events2->photo4 != NULL)
                             <div class="gallery_row">
 
-                                <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('uploads/event/'.$events2->icon)}});">{{$events2->title}}</h4>
+                                <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('storage/app/uploads/event/'.$events2->icon)}});">{{$events2->title}}</h4>
 
                                     <div class="gallery_items gallery_items__pattern-1 js-slider-gallery">
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo1)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo1)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo2)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo2)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo3)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo3)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo4)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo4)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                 </div>
                             </div>
                         @else
 
                             <div class="gallery_row">
-                                <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('uploads/event/'.$events2->icon)}});">{{$events2->title}}</h4>
+                                <h4 class="gallery_subtitle js-animation" style=" background-image:  url({{asset('storage/app/uploads/event/'.$events2->icon)}});">{{$events2->title}}</h4>
                                 <div class="gallery_items gallery_items__pattern-2 js-slider-gallery">
 
 
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo1)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo1)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo2)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo2)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                     <div class="gallery_item">
-                                        <img src="{{asset('uploads/event/'.$events2->photo3)}}" alt="" class="gallery_image js-animation">
+                                        <img src="{{asset('storage/app/uploads/event/'.$events2->photo3)}}" alt="" class="gallery_image js-animation">
                                     </div>
                                 </div>
 
@@ -550,7 +556,7 @@
             <div class="team_slider js-slider-team" >
                @if($photoTeam1)
                 <div class="team_member" >
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam1)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam1)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name1}}</span>
                         <span class="team_member-description">{{$textTeam1}}</span>
@@ -559,7 +565,7 @@
              @if($photoTeam2)
                 </div>
                 <div class="team_member">
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam2)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam2)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name2}}</span>
                         <span class="team_member-description">{{$textTeam2}}</span>
@@ -568,7 +574,7 @@
                 @endif
                 @if($photoTeam3)
                 <div class="team_member" >
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam3)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam3)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name3}}</span>
                         <span class="team_member-description">{{$textTeam3}}</span>
@@ -577,7 +583,7 @@
                    @endif
                    @if($photoTeam4)
                 <div class="team_member" >
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam4)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam4)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name4}}</span>
                         <span class="team_member-description">{{$textTeam4}}</span>
@@ -586,7 +592,7 @@
                    @endif
                    @if($photoTeam5)
                 <div class="team_member">
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam5)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam5)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name5}}</span>
                         <span class="team_member-description">{{$textTeam5}}</span>
@@ -595,7 +601,7 @@
                    @endif
                    @if($photoTeam6)
                 <div class="team_member">
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam6)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam6)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name6}}</span>
                         <span class="team_member-description">{{$textTeam6}}</span>
@@ -604,7 +610,7 @@
                    @endif
                    @if($photoTeam7)
                 <div class="team_member" >
-                    <img class="team_member-image" src="{{asset('uploads/Team/'.$photoTeam7)}}" alt="">
+                    <img class="team_member-image" src="{{asset('storage/app/uploads/Team/'.$photoTeam7)}}" alt="">
                     <div class="team_member-tooltip">
                         <span class="team_member-title">{{$name7}}</span>
                         <span class="team_member-description">{{$textTeam7}}</span>
@@ -839,5 +845,6 @@
 <script src="{{asset('src/js/tiny-slider.js')}}"></script>
 <script src="{{asset('src/js/js-cookie.js')}}"></script>
 <script src="{{asset('src/js/main.js')}}"></script>
+<script src="{{asset('js/my_main.js')}}"></script>
 </body>
 </html>

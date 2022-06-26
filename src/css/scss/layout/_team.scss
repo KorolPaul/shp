@@ -62,7 +62,7 @@
         transform-origin: center;
         z-index: 1;
         box-sizing: border-box;
-        min-width: 160px;
+        width: 75%;
         transform: scale(.7) translate(-50%, -50%);
         transition: .2s $easeInOutCirc opacity,
                     .2s $easeInOutCirc transform,

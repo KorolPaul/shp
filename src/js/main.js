@@ -62,7 +62,6 @@ const teamSlider = tns({
             items: 3
         },
         1360: {
-            gutter: 28,
             items: 4
         }
     }
@@ -70,35 +69,55 @@ const teamSlider = tns({
 
 const teamCarouselWrapper = document.querySelector('.team');
 if (teamCarouselWrapper) {
+    var isAnimated = false;
+
     function handleCarouselScroll(isForward) {
+        if (isAnimated) {
+            return
+        }
+
+        isAnimated = true
+        setTimeout(() => {
+            isAnimated = false
+        }, 200);
+
         const { slideCount, index } = teamSlider.getInfo();
         if (isForward) {
-            if (index >= slideCount) {
+            if (index >= slideCount / 2) {
+                document.removeEventListener(wheelEvent, preventScroll, { passive: false });
                 return;
             }
 
             teamSlider.goTo('next');
         } else {
             if (index === 0) {
+                document.removeEventListener(wheelEvent, preventScroll, { passive: false });
                 return;
             }
             teamSlider.goTo('prev');
         }
     }
 
-    let lastRatio = null
-    const observerCallback = function (e) {
-        const { boundingClientRect } = e[0];
-        const ratio = boundingClientRect.height / 2 - boundingClientRect.y;
+    function preventScroll(e) {
+        e.preventDefault()
 
-        if (ratio > 0) {
-            handleCarouselScroll(ratio > lastRatio)
+        handleCarouselScroll(e.deltaY > 0)
+    }
+
+    const observerCallback = function (e) {
+        const { boundingClientRect, intersectionRatio } = e[0];
+        // const ratio = boundingClientRect.height / 2 - boundingClientRect.y;
+
+        if (intersectionRatio > 0.9) {
+            document.addEventListener(wheelEvent, preventScroll, { passive: false })
+        } else {
+            document.removeEventListener(wheelEvent, preventScroll, { passive: false })
         }
         lastRatio = ratio
     };
 
     const observer = new IntersectionObserver(observerCallback, {
-        rootMargin: '0px 0px -40% 0px',
+        rootMargin: '0px 0px 0px 0px',
         threshold: thresholdSteps,
         root: null
     });
@@ -133,7 +152,6 @@ menuLinkElements.forEach(el => el.addEventListener('click', () => document.body.
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle');
 
 function disableScroll(e) {
-    console.log(e.originalTarget.className);
     const { target } = e
     let isInPopup = false;
     
@@ -205,7 +223,6 @@ if (cookiesBanner && !hasCookies) {
 
 /* appaerance animation */
 const animatedElements = document.querySelectorAll('.js-animation');
-
 
 if (animatedElements.length) {
     const ratio = isMobile ? 0.2 : 0.5

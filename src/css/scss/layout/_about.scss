@@ -120,6 +120,13 @@
                 }
             }
         }
+
+        span:not([class]) {
+            word-spacing: -3.5vw;
+            @include tablet {
+                word-spacing: initial;
+            }
+        }
     }
     &_mask {
         display: none;
